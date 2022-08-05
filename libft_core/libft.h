@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:39:27 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 18:47:46 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/05 18:41:41 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,14 @@ int					ft_putstr_fd(char *s, int fd);
 char				**ft_split(char const *s, char c);
 void				split_worker(const char *s, int *i, int *upto, char c);
 char				*ft_strchr(const char *s, int c);
-char				*ft_strdup(char *src);
-char				*ft_strndup(char *src, size_t n);
+char				*ft_strdup(const char *src);
+char				*ft_strndup(const char *src, size_t n);
 char				*ft_strjoin(char const *s1, char const *s2);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
 size_t				ft_strlen(const char *s);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 int					ft_strncmp(char const *s1, char const *s2, size_t n);
 char				*ft_strnstr(const char *s1, const char *s2, size_t n);
 char				*ft_strrchr(const char *s, int c);

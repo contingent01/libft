@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:39:03 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 18:48:58 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/05 16:30:26 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1)
 		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
 	i = 0;
 	while (ft_strchr(set, s1[i]) && s1[i])
 		i++;

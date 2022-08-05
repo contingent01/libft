@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 18:37:19 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 18:49:43 by mdkhissi         ###   ########.fr       */
+/*   Created: 2022/05/30 18:37:28 by mdkhissi          #+#    #+#             */
+/*   Updated: 2022/08/05 15:10:36 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Moving index in a loop up to n,
-** stopping when finding c character
-** verify after that if index stopped
-** before reaching n, if it stopped return
-** the address of the character in the string
-** using the index variable. If not return NULL.
+** We use strings to manipulate memory byte by byte,
+** we copy character by character src to dest.
+** we return dest
 */
 
-void	*ft_memchr(void *s, int c, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t			i;
-	unsigned char	*str;
+	unsigned char	*s;
+	unsigned char	*d;
 
-	str = s;
-	i = 0;
-	while (i < n && str[i] != (unsigned char)c)
-		i++;
-	if (i < n)
-		return (&str[i]);
-	else
+	if (!dest || !src)
 		return (NULL);
+	s = (unsigned char *)src;
+	d = (unsigned char *)dest;
+	i = 0;
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dest);
 }

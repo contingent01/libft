@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 18:35:46 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 18:50:13 by mdkhissi         ###   ########.fr       */
+/*   Created: 2022/05/30 18:38:29 by mdkhissi          #+#    #+#             */
+/*   Updated: 2022/08/05 15:22:43 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** allocate num * size using malloc
-** then using ft_bzero to intiate all
-** bytes to 0
-*/
-
-void	*ft_calloc(size_t num, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	void	*m;
+	size_t	i;
+	size_t	s1_end;
 
-	m = malloc(num * size);
-	if (!m)
-		return (NULL);
-	ft_bzero(m, num * size);
-	return (m);
+	if (!dest || !src)
+		return (0);
+	i = 0;
+	while (dest[i] && i < size)
+		i++;
+	s1_end = i;
+	if (size == 0)
+		return (s1_end + ft_strlen(src));
+	while (src[i - s1_end] && i < size - 1)
+	{
+		dest[i] = src[i - s1_end];
+		i++;
+	}
+	if (s1_end < size)
+		dest[i] = '\0';
+	return (s1_end + ft_strlen(src));
 }

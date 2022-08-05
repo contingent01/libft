@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 18:37:38 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 18:49:35 by mdkhissi         ###   ########.fr       */
+/*   Created: 2022/05/30 18:38:58 by mdkhissi          #+#    #+#             */
+/*   Updated: 2022/08/05 18:54:24 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** assign c to every byte of *s up to n
-*/
-
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned char	*ptr;
+	int		i;
+	int		last;
 
-	ptr = s;
-	while (n-- > 0)
-		*ptr++ = c;
-	return (s);
+	if (!s)
+		return (NULL);
+	i = 0;
+	last = -1;
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			last = i;
+		i++;
+	}
+	if (last >= 0)
+		return ((char *)&s[last]);
+	else if ((char)c == '\0')
+		return ((char *)&s[i]);
+	else
+		return (NULL);
 }

@@ -1,2 +1,4 @@
 # libft
-libft_42
+libft
+ft_printf
+gnl

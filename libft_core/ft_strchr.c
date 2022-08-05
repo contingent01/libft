@@ -1,46 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 18:36:59 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 18:49:50 by mdkhissi         ###   ########.fr       */
+/*   Created: 2022/05/30 18:38:11 by mdkhissi          #+#    #+#             */
+/*   Updated: 2022/08/05 18:54:42 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Create a new list that have elements
-** contents been changed by f()
+** Moving index from 0 up to $c,
+** if it reach '\0' and $c is not '\0'
+** return NULL
+** Anything else return the address of
+** the character pointed by the index.
 */
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+char	*ft_strchr(const char *s, int c)
 {
-	t_list	*new;
-	t_list	*tmp;
-	t_list	*i;
+	int		i;
 
-	if (!lst || !f)
+	i = 0;
+	if (!s)
 		return (NULL);
-	new = ft_lstnew(f(lst->content));
-	if (!new)
+	while (s[i] && s[i] != (char)c)
+		i++;
+	if (s[i] == '\0' && (char)c != '\0')
 		return (NULL);
-	i = new;
-	lst = lst->next;
-	while (lst)
-	{
-		tmp = ft_lstnew(f(lst->content));
-		if (!tmp)
-		{
-			ft_lstclear(&new, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&i, tmp);
-		i = i->next;
-		lst = lst->next;
-	}
-	return (new);
+	else
+		return ((char *)&s[i]);
 }

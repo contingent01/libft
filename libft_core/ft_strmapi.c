@@ -1,38 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 18:37:28 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 18:49:40 by mdkhissi         ###   ########.fr       */
+/*   Created: 2022/05/30 18:38:45 by mdkhissi          #+#    #+#             */
+/*   Updated: 2022/08/05 18:41:25 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** We use strings to manipulate memory byte by byte,
-** we copy character by character src to dest.
-** we return dest
-*/
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t			i;
-	unsigned char	*s;
-	unsigned char	*d;
+	unsigned int	i;
+	char			*str;
 
-	if (!dest && !src)
+	if (!s)
 		return (NULL);
-	s = (unsigned char *)src;
-	d = (unsigned char *)dest;
+	if (!f)
+		return (ft_strdup(s));
+	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!str)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		d[i] = s[i];
+		str[i] = f(i, s[i]);
 		i++;
 	}
-	return (dest);
+	str[i] = '\0';
+	return (str);
+}
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+{
+	unsigned int	i;
+
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

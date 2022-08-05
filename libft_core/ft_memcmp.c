@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:37:24 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 18:49:42 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/05 15:09:56 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*one;
 	unsigned char	*two;
 
+	if (!s1)
+		return (-1);
+	else if (!s2)
+		return (1);
+	else if (!s1 && !s2)
+		return (0);
 	one = (unsigned char *)s1;
 	two = (unsigned char *)s2;
 	i = 0;

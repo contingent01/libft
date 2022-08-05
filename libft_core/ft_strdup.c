@@ -6,13 +6,13 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:38:15 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 18:49:17 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/05 16:59:54 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	char	*dup;
 	size_t	lensrc;
@@ -28,15 +28,13 @@ char	*ft_strdup(char *src)
 	return (dup);
 }
 
-char	*ft_strndup(char *src, size_t n)
+char	*ft_strndup(const char *src, size_t n)
 {
 	char	*dup;
 	size_t	lensrc;
 	size_t	lendest;
 
 	if (!src)
-		return (NULL);
-	if (n < 0)
 		return (NULL);
 	lensrc = ft_strlen(src);
 	lendest = n * (lensrc > n) + lensrc * (lensrc <= n);

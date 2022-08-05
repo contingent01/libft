@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:37:32 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 18:49:38 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/05 15:11:28 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const unsigned char	*s;
 	unsigned char		*d;
 
-	if (!dest && !src)
+	if (!dest || !src)
 		return (NULL);
 	s = (const unsigned char *)src;
 	d = (unsigned char *)dest;
