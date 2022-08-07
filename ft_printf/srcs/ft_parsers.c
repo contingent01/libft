@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:17:50 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 15:56:01 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/07 19:42:14 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	extract_flags(const char *format, int *i, t_tags *tags)
 {
-	while (ft_strchr(format[*i], g_flags) != -1)
+	while (ft_strchr(g_flags, format[*i]) != NULL)
 	{
 		if (format[*i] == '+')
 			tags->sign = format[*i];
@@ -83,7 +83,7 @@ void	extract_precisio(const char *format, int *i, va_list *vl, t_tags *tags)
 
 bool	extract_specifier(const char *format, int *i, t_tags *tags)
 {
-	if (ft_strchr(format[*i], g_specifiers) != -1)
+	if (ft_strchr(g_specifiers, format[*i]) != NULL)
 	{
 		tags->specifier = format[*i];
 		(*i)++;

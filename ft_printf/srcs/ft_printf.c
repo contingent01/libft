@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:19:56 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 14:47:40 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/07 23:21:17 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ int	append_text(char **s, const char *format, int *i, int count)
 	while (format[*i] && format[*i] != '%')
 		(*i)++;
 	if (*i - from > 0)
+	{
 		ft_strnallocat(s, format + from, *i - from, 0);
+		s = ft_strnjoin(s, format + from, *i - from);
+	}
 	count += *i - from;
 	return (count);
 }

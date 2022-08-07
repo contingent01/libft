@@ -6,40 +6,11 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:17:39 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 15:55:56 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/07 19:19:33 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_atoi(const char *str)
-{
-	int		i;
-	int		x;
-	int		sign;
-	int		tmp;
-
-	i = 0;
-	x = 0;
-	sign = 1;
-	if (str[i] == '-')
-		sign *= i++ - 1;
-	while (ft_isdigit(str[i]) && str[i])
-	{
-		tmp = x;
-		x = x * 10 + str[i] - '0';
-		if (((x - (str[i] - '0')) / 10) * sign != tmp * sign)
-		{
-			if (sign < 0)
-				x = 0;
-			else
-				x = -1;
-			break ;
-		}
-		i++;
-	}
-	return (x * sign);
-}
 
 char	*ft_itoa_ws(long n)
 {

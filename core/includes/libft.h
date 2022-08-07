@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:39:27 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 17:44:47 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/07 23:10:42 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,9 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void*));
 
 char			**ft_free_sar(char **sarr);
-
+size_t	ft_strncat(char *dest, const char *src, size_t n);
+size_t	ft_strcat(char *dest, const char *src);
+char	*ft_strnjoin(const char *s1, const char *s2, size_t n);
+size_t	ft_strcpy(char *dest, const char *src);
 #endif
+

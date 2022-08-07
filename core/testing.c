@@ -5,15 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/07 14:49:04 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 22:44:50 by mdkhissi         ###   ########.fr       */
+/*   Created: 2022/08/07 23:12:25 by mdkhissi          #+#    #+#             */
+/*   Updated: 2022/08/07 23:14:00 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "includes/libft.h"
+#include <stdio.h>
 
 int main(void)
 {
-	ft_printf("ok %d%s\n", 4, "dkhissi");
+
+	printf("%s\n", ft_strnjoin("ok", " hello", 3));
+
 	return (0);
 }

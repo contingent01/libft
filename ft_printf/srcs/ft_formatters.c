@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:17:19 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 15:55:50 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/07 19:40:57 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ char	*format_c(char c, t_tags *tags)
 	ft_strnallocat(&s, &c, 1, 0);
 	s_width(&s, 1, tags);
 	if (tags->nil)
-		s[ft_strchr('c', s)] = '\0';
+	{
+		s = ft_strchr(s, 'c');
+		*s = '\0';
+	}
 	return (s);
 }
 

@@ -5,14 +5,17 @@ DESCRIPTION = Ft_Printf
 # ----------- COMPILER FLAGS -------
 CC			= clang
 CFLAGS		= -Wall -Wextra -Werror -g3 -fsanitize=address
+LPFLAGS		= -L$(LIBFT) -lft
 
 # ----------- INCLUDE --------------
 INCLUDE		=	includes
-INCLUDES	=	-I $(INCLUDE)
+INCLUDES	=	-I $(INCLUDE) -I $(LIBFT)/includes
 
 # ----------- FILES ----------------
 OBJ			= ./objs
 SRC			= ./srcs
+LIBFT		= ../core
+LFTOBJS	= 	$(wildcard $(LIBFT)/objs/*.o)
 SRCS		= ft_printf.c ft_printf_utils.c ft_core.c ft_formatters.c ft_ntoston.c ft_parsers.c ft_sutils.c ft_utils.c
 OBJS		= $(patsubst %.c, $(OBJ)/%.o,$(SRCS))
 
@@ -29,7 +32,7 @@ EOC			= \033[0;0m
 all		: ${NAME}
 $(NAME)	: ${OBJS}
 	@echo -e "$(PURPLE)§> $(RED)Building $(DESCRIPTION) $(GREEN)√$(EOC)"
-	@ar rcs ${NAME} ${OBJS}
+	@ar rcs ${NAME} $(LFTOBJS) ${OBJS} 
 
 $(OBJ)/%.o	: $(SRC)/%.c | $(OBJ)
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@

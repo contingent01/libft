@@ -6,7 +6,7 @@
 #    By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 18:39:38 by mdkhissi          #+#    #+#              #
-#    Updated: 2022/08/07 17:45:31 by mdkhissi         ###   ########.fr        #
+#    Updated: 2022/08/07 22:36:50 by mdkhissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC			= clang
 CFLAGS		= -Wall -Wextra -Werror
 
 # ----------- INCLUDE --------------
-INCLUDE		=	.
+INCLUDE		=	includes
 INCLUDES	=	-I $(INCLUDE)
 
 # ----------- FILES ----------------

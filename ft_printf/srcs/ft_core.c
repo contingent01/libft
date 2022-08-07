@@ -6,34 +6,11 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:15:34 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 16:18:14 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/07 19:41:39 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	ft_strncpy(char *dest, const char *src, size_t n)
-{
-	size_t	i;
-
-	if (!dest || !src)
-		return ;
-	if (n == 0)
-		dest[0] = '\0';
-	i = -1;
-	if ((int) n == -1)
-	{
-		while (src[++i])
-			dest[i] = src[i];
-		dest[i] = '\0';
-	}
-	else
-	{
-		while (src[++i] && i < n)
-			dest[i] = src[i];
-		dest[n] = '\0';
-	}
-}
 
 /*
 ** ft_strallocat() is like ft_strjoin()
@@ -78,30 +55,6 @@ void	ft_strnallocat(char **dest, const char *src, int n, int r)
 	}
 	free(*dest);
 	*dest = result;
-}
-
-void	*ft_memset(void *s, int c, size_t n)
-{
-	unsigned char	*ptr;
-
-	ptr = s;
-	while (n-- > 0)
-		*ptr++ = c;
-	return (s);
-}
-
-int	ft_strchr(const char c, const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			return (i);
-		i++;
-	}
-	return (-1);
 }
 
 char	*str_capitalize(char *str)
