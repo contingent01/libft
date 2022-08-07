@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_sarr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 18:35:46 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/05 17:50:10 by mdkhissi         ###   ########.fr       */
+/*   Created: 2022/08/07 17:31:53 by mdkhissi          #+#    #+#             */
+/*   Updated: 2022/08/07 17:34:21 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-/*
-** allocate num * size using malloc
-** then using ft_bzero to intiate all
-** bytes to 0
-*/
 
-void	*ft_calloc(size_t num, size_t size)
+char	**ft_free_sar(char **sarr)
 {
-	void	*m;
+	int	i;
 
-	if (num >= size && num * size < num)
-		return (NULL);
-	if (size > num && num * size < size)
-		return (NULL);
-	m = malloc(num * size);
-	if (!m)
-		return (NULL);
-	ft_bzero(m, num * size);
-	return (m);
+	i = 0;
+	while (sarr && sarr[i])
+	{
+		free(sarr[i]);
+		i++;
+	}
+	free(sarr);
+	return (NULL);
 }

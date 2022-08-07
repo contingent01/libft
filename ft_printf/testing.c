@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 14:49:04 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 14:57:16 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/07 16:18:44 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int main(void)
 {
-	ft_printf("ok %.*s%s\n", 4, "dkhissi", "=");
+	ft_printf("ok %d\n", 4);
 	return (0);
 }

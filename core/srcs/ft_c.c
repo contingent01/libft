@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   c_check.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 18:38:40 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 18:49:08 by mdkhissi         ###   ########.fr       */
+/*   Created: 2022/08/07 16:21:44 by mdkhissi          #+#    #+#             */
+/*   Updated: 2022/08/07 16:23:01 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_isalnum(int c)
 {
-	int	l;
+	return (ft_isalpha(c) || ft_isdigit(c));
+}
 
-	l = 0;
-	while (s && s[l] != '\0')
-		l++;
-	return (l);
+int	ft_isalpha(int c)
+{
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+}
+
+int	ft_isascii(int c)
+{
+	return (c >= 0 && c <= 127);
+}
+
+int	ft_isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
+}
+
+int	ft_isprint(int c)
+{
+	return (c >= 32 && c < 127);
 }

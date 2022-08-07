@@ -4,7 +4,7 @@ DESCRIPTION = Ft_Printf
 
 # ----------- COMPILER FLAGS -------
 CC			= clang
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g3 -fsanitize=address
 
 # ----------- INCLUDE --------------
 INCLUDE		=	includes

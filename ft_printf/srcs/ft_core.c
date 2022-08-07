@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:15:34 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 15:55:45 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/07 16:18:14 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,15 @@ void	ft_strncpy(char *dest, const char *src, size_t n)
 
 void	ft_strnallocat(char **dest, const char *src, int n, int r)
 {
-	size_t	lendest;
-	size_t	lensrc;
+	int		lendest;
+	int		lensrc;
 	char	*result;
 
 	if (!dest || (!*dest && !src) || n == 0)
 		return ;
 	lendest = ft_strlen(*dest);
 	lensrc = ft_strlen(src);
-	if (n < (int)lensrc && n > 0)
+	if (n < lensrc && n > 0)
 		lensrc = n;
 	result = malloc(sizeof(char) * (lendest + lensrc + 1));
 	if (!result)

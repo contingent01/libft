@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_c2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 18:36:26 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 14:44:59 by mdkhissi         ###   ########.fr       */
+/*   Created: 2022/08/07 16:23:22 by mdkhissi          #+#    #+#             */
+/*   Updated: 2022/08/07 16:35:10 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** If the list is empty,
-** call ft_lstadd_front(),
-** else, call call ft_lstlast()
-** then link it with the the new element
-*/
-
-void	ft_lstadd_back(t_list **alst, t_list *new)
+int	ft_isspace(int c)
 {
-	t_list	*p;
-
-	if (!alst || !new)
-		return ;
-	if (!*alst)
-		ft_lstadd_front(alst, new);
+	if (c == ' ' || c == '\t' || c == '\n'
+		|| c == '\v' || c == '\f' || c == '\r')
+		return (1);
 	else
-	{
-		p = ft_lstlast(*alst);
-		p->next = new;
-	}
+		return (0);
+}
+
+int	ft_tolower(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	else
+		return (c);
+}
+
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	else
+		return (c);
 }

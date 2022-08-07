@@ -1,16 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_print.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 18:37:52 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 18:49:29 by mdkhissi         ###   ########.fr       */
+/*   Created: 2022/08/07 16:33:30 by mdkhissi          #+#    #+#             */
+/*   Updated: 2022/08/07 16:34:32 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	ft_putstr_fd(s, fd);
+	write(fd, "\n", 1);
+}
+
+int	ft_putstr_fd(char *s, int fd)
+{
+	int	len;
+
+	len = ft_strlen(s);
+	write(fd, s, len);
+	return (len);
+}
 
 /*
 ** 1- If the number is negative,
@@ -51,3 +71,4 @@ void	ft_putnbr_fd(int nb, int fd)
 	c += '0';
 	ft_putchar_fd(c, fd);
 }
+

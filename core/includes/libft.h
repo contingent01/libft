@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:39:27 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/05 18:41:41 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/07 17:44:47 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,20 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-int					ft_atoi(const char *str);
-void				ft_bzero(void *s, size_t n);
-void				*ft_calloc(size_t num, size_t size);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
+int					ft_isspace(int c);
+
+size_t			ft_strncpy(char *dest, const char *src, size_t n);
+
+int					ft_atoi(const char *str);
+long				ft_atol(const char *str);
+void				ft_bzero(void *s, size_t n);
+void				*ft_calloc(size_t num, size_t size);
+
 char				*ft_itoa(int n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memchr(void *s, int c, size_t n);
@@ -43,7 +49,6 @@ void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int nb, int fd);
 int					ft_putstr_fd(char *s, int fd);
 char				**ft_split(char const *s, char c);
-void				split_worker(const char *s, int *i, int *upto, char c);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strdup(const char *src);
 char				*ft_strndup(const char *src, size_t n);
@@ -70,5 +75,7 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void*));
+
+char			**ft_free_sar(char **sarr);
 
 #endif
