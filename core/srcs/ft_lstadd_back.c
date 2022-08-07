@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:36:26 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 18:50:01 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/07 14:44:59 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	{
 		p = ft_lstlast(*alst);
 		p->next = new;
-		p->next->next = NULL;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:19:56 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 16:04:42 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/07 14:47:40 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	print_s_fd(char **dest, char *s, int fd)
 		ft_putstr_fd(s, STDOUT_FILENO);
 }
 
-int	ft_printf(char **dest, int fd, const char *format, ...)
+int	ft_vprintf(char **dest, int fd, const char *format, va_list args)
 {
 	va_list	vl;
 	t_tags	tags;
@@ -46,7 +46,7 @@ int	ft_printf(char **dest, int fd, const char *format, ...)
 	s = NULL;
 	count = 0;
 	i = 0;
-	va_start(vl, format);
+	va_copy(vl, args);
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -61,4 +61,13 @@ int	ft_printf(char **dest, int fd, const char *format, ...)
 	}
 	print_s_fd(dest, s, fd);
 	return (count);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	va_list	args;
+
+	va_start(args, format);
+	ft_vprintf(NULL, -1, format, args);
+	return (1);
 }

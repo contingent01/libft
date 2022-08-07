@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:23:31 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 16:09:03 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/07 14:48:15 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ typedef struct s_tags
 
 int		append_text(char **s, const char *format, int *i, int count);
 void	print_s_fd(char **dest, char *s, int fd);
-int		ft_printf(char **dest, int fd, const char *format, ...);
+int		ft_vprintf(char **dest, int fd, const char *format, va_list args);
+int	ft_printf(const char *format, ...);
 
 void	sign_0x(char **bigStr, long n, t_tags *tags, int r);
 void	reinit_flags(t_tags *tags);
