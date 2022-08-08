@@ -6,12 +6,12 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:19:56 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 23:21:17 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/08 22:58:06 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
+#include <stdio.h>
 int	append_text(char **s, const char *format, int *i, int count)
 {
 	int	from;
@@ -21,8 +21,7 @@ int	append_text(char **s, const char *format, int *i, int count)
 		(*i)++;
 	if (*i - from > 0)
 	{
-		ft_strnallocat(s, format + from, *i - from, 0);
-		s = ft_strnjoin(s, format + from, *i - from);
+		*s = ft_strnappend(*s, format + from, *i - from);
 	}
 	count += *i - from;
 	return (count);
@@ -36,6 +35,8 @@ void	print_s_fd(char **dest, char *s, int fd)
 		ft_putstr_fd(s, fd);
 	if (!dest && fd == -1)
 		ft_putstr_fd(s, STDOUT_FILENO);
+	if (!dest)
+		free(s);
 }
 
 int	ft_vprintf(char **dest, int fd, const char *format, va_list args)
@@ -45,6 +46,7 @@ int	ft_vprintf(char **dest, int fd, const char *format, va_list args)
 	int		i;
 	int		count;
 	char	*s;
+	char	*tmp;
 
 	s = NULL;
 	count = 0;
@@ -55,8 +57,9 @@ int	ft_vprintf(char **dest, int fd, const char *format, va_list args)
 		if (format[i] == '%')
 		{
 			reinit_flags(&tags);
-			ft_strnallocat(&s,
-				parse_param(format, &i, &vl, &tags), tags.len, 0);
+			tmp = parse_param(format, &i, &vl, &tags);
+			s = ft_strnappend(s, tmp, tags.len);
+			free(tmp);
 			count += tags.len;
 		}
 		else
@@ -69,8 +72,9 @@ int	ft_vprintf(char **dest, int fd, const char *format, va_list args)
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
+	int		ret;
 
 	va_start(args, format);
-	ft_vprintf(NULL, -1, format, args);
-	return (1);
+	ret = ft_vprintf(NULL, -1, format, args);
+	return (ret);
 }

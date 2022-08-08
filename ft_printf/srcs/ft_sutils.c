@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:22:47 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 15:56:14 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/08 22:26:04 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	s_precision(char **bigStr, t_tags *tags)
 			return ;
 		ft_memset(s, '0', tags->precision - tags->len);
 		s[tags->precision - tags->len] = '\0';
-		ft_strnallocat(bigStr, s, -1, 1);
+		*bigStr = ft_strrappend(*bigStr, s, 1);
 		free(s);
 		tags->len += tags->precision - tags->len;
 	}
@@ -64,11 +64,11 @@ void	s_width(char **bigStr, long n, t_tags *tags)
 void	s_justify(char **bigStr, char *s, t_tags *tags)
 {
 	if (tags->justify == '-')
-		ft_strnallocat(bigStr, s, -1, 0);
+		*bigStr = ft_strrappend(*bigStr, s, 0);
 	else if (tags->justify == '0')
-		ft_strnallocat(bigStr, s, -1, 1);
+		*bigStr = ft_strrappend(*bigStr, s, 1);
 	else
-		ft_strnallocat(bigStr, s, -1, 1);
+		*bigStr = ft_strrappend(*bigStr, s, 1);
 }
 
 char	*s_sign(long n, char tagsign)

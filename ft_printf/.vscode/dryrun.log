@@ -1,16 +1,5 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/mnt/nfs/homes/mdkhissi/dev/libft/ft_printf'
-mkdir objs
-echo -e "\033[1;35m§> \033[1;31mCompiling object files \033[1;32m√\033[0;0m"
-clang -Wall -Wextra -Werror -g3 -fsanitize=address -I includes -I ../core/includes -L../core -lft -c srcs/ft_printf.c -o objs/ft_printf.o
-clang -Wall -Wextra -Werror -g3 -fsanitize=address -I includes -I ../core/includes -L../core -lft -c srcs/ft_printf_utils.c -o objs/ft_printf_utils.o
-clang -Wall -Wextra -Werror -g3 -fsanitize=address -I includes -I ../core/includes -L../core -lft -c srcs/ft_core.c -o objs/ft_core.o
-clang -Wall -Wextra -Werror -g3 -fsanitize=address -I includes -I ../core/includes -L../core -lft -c srcs/ft_formatters.c -o objs/ft_formatters.o
-clang -Wall -Wextra -Werror -g3 -fsanitize=address -I includes -I ../core/includes -L../core -lft -c srcs/ft_ntoston.c -o objs/ft_ntoston.o
-clang -Wall -Wextra -Werror -g3 -fsanitize=address -I includes -I ../core/includes -L../core -lft -c srcs/ft_parsers.c -o objs/ft_parsers.o
-clang -Wall -Wextra -Werror -g3 -fsanitize=address -I includes -I ../core/includes -L../core -lft -c srcs/ft_sutils.c -o objs/ft_sutils.o
-clang -Wall -Wextra -Werror -g3 -fsanitize=address -I includes -I ../core/includes -L../core -lft -c srcs/ft_utils.c -o objs/ft_utils.o
-echo -e "\033[1;35m§> \033[1;31mBuilding Ft_Printf \033[1;32m√\033[0;0m"
-ar rcs libftprintf.a   ./objs/ft_printf.o  ./objs/ft_printf_utils.o  ./objs/ft_core.o  ./objs/ft_formatters.o  ./objs/ft_ntoston.o  ./objs/ft_parsers.o  ./objs/ft_sutils.o  ./objs/ft_utils.o 
+make: Nothing to be done for 'all'.
 make: Leaving directory '/mnt/nfs/homes/mdkhissi/dev/libft/ft_printf'
  

@@ -4,7 +4,7 @@ DESCRIPTION = Ft_Printf
 
 # ----------- COMPILER FLAGS -------
 CC			= clang
-CFLAGS		= -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS		= -Wall -Wextra -Werror -g3
 LPFLAGS		= -L$(LIBFT) -lft
 
 # ----------- INCLUDE --------------
@@ -16,7 +16,7 @@ OBJ			= ./objs
 SRC			= ./srcs
 LIBFT		= ../core
 LFTOBJS	= 	$(wildcard $(LIBFT)/objs/*.o)
-SRCS		= ft_printf.c ft_printf_utils.c ft_core.c ft_formatters.c ft_ntoston.c ft_parsers.c ft_sutils.c ft_utils.c
+SRCS		= ft_printf.c ft_printf_utils.c ft_core.c ft_formatters.c ft_ntoston.c ft_parsers.c ft_sutils.c
 OBJS		= $(patsubst %.c, $(OBJ)/%.o,$(SRCS))
 
 # ----------- COLORS ---------------

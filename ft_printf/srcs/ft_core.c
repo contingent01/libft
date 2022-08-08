@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:15:34 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 19:41:39 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/08 22:44:31 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,33 +28,31 @@
 ** allocated string.
 */
 
-void	ft_strnallocat(char **dest, const char *src, int n, int r)
+char	*ft_strnrappend(char *s1, const char *s2, size_t n, int r)
 {
-	int		lendest;
-	int		lensrc;
 	char	*result;
 
-	if (!dest || (!*dest && !src) || n == 0)
-		return ;
-	lendest = ft_strlen(*dest);
-	lensrc = ft_strlen(src);
-	if (n < lensrc && n > 0)
-		lensrc = n;
-	result = malloc(sizeof(char) * (lendest + lensrc + 1));
-	if (!result)
-		return ;
 	if (!r)
-	{
-		ft_strncpy(result, *dest, lendest);
-		ft_strncpy(result + lendest, src, lensrc);
-	}
+		result = ft_strnjoin(s1, s2, n);
 	else
-	{
-		ft_strncpy(result, src, lensrc);
-		ft_strncpy(result + lensrc, *dest, lendest);
-	}
-	free(*dest);
-	*dest = result;
+		result = ft_strnjoin(s2, s1, n);
+	if (!result)
+		return (NULL);
+	return (result);
+}
+
+char	*ft_strrappend(char *s1, const char *s2, int r)
+{
+	char	*result;
+
+	if (!r)
+		result = ft_strjoin(s1, s2);
+	else
+		result = ft_strjoin(s2, s1);
+	free(s1);
+	if (!result)
+		return (NULL);
+	return (result);
 }
 
 char	*str_capitalize(char *str)
@@ -72,3 +70,4 @@ char	*str_capitalize(char *str)
 	}
 	return (str);
 }
+

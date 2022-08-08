@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:23:31 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 22:44:23 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/08 22:23:24 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ char	*format_s(char *src, t_tags *tags);
 char	*format_p(uintptr_t n, t_tags *tags);
 char	*format_idu(long n, t_tags *tags);
 
-void	ft_strnallocat(char **dest, const char *src, int n, int r);
 char	*str_capitalize(char *str);;
+char	*ft_strnrappend(char *s1, const char *s2, size_t n, int r);
+char	*ft_strrappend(char *s1, const char *s2, int r);
 #endif

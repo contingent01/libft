@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:17:19 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 19:40:57 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/08 22:05:39 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*format_c(char c, t_tags *tags)
 		tags->nil = 1;
 		c = 'c';
 	}
-	ft_strnallocat(&s, &c, 1, 0);
+	s = ft_strnappend(s, &c, 1);
 	s_width(&s, 1, tags);
 	if (tags->nil)
 	{
@@ -59,17 +59,17 @@ char	*format_s(char *src, t_tags *tags)
 	s = NULL;
 	tmp = NULL;
 	if (src == NULL)
-		ft_strnallocat(&tmp, "(null)", -1, 0);
+		tmp = ft_strappend(tmp, "(null)");
 	else
-		ft_strnallocat(&tmp, src, -1, 0);
+		tmp = ft_strappend(tmp, src);
 	tags->len = ft_strlen(tmp);
 	if (tags->precision < tags->len && tags->precision > -1)
 	{
-		ft_strnallocat(&s, tmp, tags->precision, 0);
+		s = ft_strnappend(s, tmp, tags->precision);
 		tags->len += tags->precision - tags->len;
 	}
 	else
-		ft_strnallocat(&s, tmp, -1, 0);
+		s = ft_strappend(s, tmp);
 	s_width(&s, 1, tags);
 	free(tmp);
 	return (s);

@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:39:27 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 23:10:42 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/08 22:03:46 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,7 @@ size_t	ft_strncat(char *dest, const char *src, size_t n);
 size_t	ft_strcat(char *dest, const char *src);
 char	*ft_strnjoin(const char *s1, const char *s2, size_t n);
 size_t	ft_strcpy(char *dest, const char *src);
+char	*ft_strnappend(char *s1, const char *s2, size_t n);
+char	*ft_strappend(char *s1, const char *s2);
 #endif
 

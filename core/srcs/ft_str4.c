@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:38:45 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 23:17:10 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/08 22:03:42 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,32 @@ char	*ft_strnjoin(const char *s1, const char *s2, size_t n)
 	s1len = ft_strlen(s1);
 	s2len = ft_strlen(s2);
 	s2len = n * (s2len > n) + s2len * (s2len <= n);
-	printf("\n n = %zu\n", s2len);
 	result = malloc((s1len + s2len + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
 	ft_strcpy(result, s1);
-	printf("res = %s\n", result);
 	ft_strncat(result, s2, s2len);
+	return (result);
+}
+
+char	*ft_strnappend(char *s1, const char *s2, size_t n)
+{
+	char	*result;
+
+	result = ft_strnjoin(s1, s2, n);
+	free(s1);
+	if (!result)
+		return (NULL);
+	return (result);
+}
+
+char	*ft_strappend(char *s1, const char *s2)
+{
+	char	*result;
+
+	result = ft_strjoin(s1, s2);
+	free(s1);
+	if (!result)
+		return (NULL);
 	return (result);
 }

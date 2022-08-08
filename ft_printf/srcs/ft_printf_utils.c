@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 15:54:25 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/29 15:55:28 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/08 22:20:48 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void	sign_0x(char **bigStr, long n, t_tags *tags, int r)
 		|| tags->specifier == 'p')
 	{
 		s = s_0x(tags);
-		ft_strnallocat(bigStr, s, -1, r);
+		*bigStr = ft_strrappend(*bigStr, s, r);
 		free(s);
 	}
 	if (tags->specifier == 'i' || tags->specifier == 'd')
 	{
 		s = s_sign(n, tags->sign);
-		ft_strnallocat(bigStr, s, -1, r);
+		*bigStr = ft_strrappend(*bigStr, s, r);
 		free(s);
 	}
 }

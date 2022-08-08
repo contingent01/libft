@@ -1,6 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/mnt/nfs/homes/mdkhissi/dev/libft'
-make: Leaving directory '/mnt/nfs/homes/mdkhissi/dev/libft'
  
 make: *** No rule to make target 'objs/ft_atoi.o', needed by 'libfts.a'.
 make: *** No rule to make target 'objs/ft_strjoin.o', needed by 'libfts.a'.
@@ -35,5 +34,8 @@ make: *** No rule to make target 'objs/ft_strrchr.o', needed by 'libfts.a'.
 make: *** No rule to make target 'objs/ft_strtrim.o', needed by 'libfts.a'.
 make: *** No rule to make target 'objs/ft_substr.o', needed by 'libfts.a'.
 make: *** No rule to make target 'objs/ft_tolower.o', needed by 'libfts.a'.
+
+make: Leaving directory '/mnt/nfs/homes/mdkhissi/dev/libft'
+ 
 make: *** No rule to make target 'objs/ft_toupper.o', needed by 'libfts.a'.
 
