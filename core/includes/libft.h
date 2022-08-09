@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:39:27 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/08 22:03:46 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/09 19:26:46 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_list
 {
 	void			*content;
+	struct s_list	*prev;
 	struct s_list	*next;
 }	t_list;
 
@@ -76,12 +77,16 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void*));
 
-char			**ft_free_sar(char **sarr);
-size_t	ft_strncat(char *dest, const char *src, size_t n);
-size_t	ft_strcat(char *dest, const char *src);
-char	*ft_strnjoin(const char *s1, const char *s2, size_t n);
-size_t	ft_strcpy(char *dest, const char *src);
-char	*ft_strnappend(char *s1, const char *s2, size_t n);
-char	*ft_strappend(char *s1, const char *s2);
+char				**ft_free_sar(char **sarr);
+size_t				ft_strncat(char *dest, const char *src, size_t n);
+size_t				ft_strcat(char *dest, const char *src);
+char				*ft_strnjoin(const char *s1, const char *s2, size_t n);
+size_t				ft_strcpy(char *dest, const char *src);
+char				*ft_strnappend(char *s1, const char *s2, size_t n);
+char				*ft_strappend(char *s1, const char *s2);
+void				*ft_free(void *ptr);
+void				*ft_free_ptrs4(void *p1, void *p2, void *p3, void *p4);
+void				*ft_free_sars4(char ***sarr1, char ***sarr2, char ***sarr3, char ***sarr4);
+void				ft_print_sar(char **sarr);
+int					ft_sarr_len(char **sarr);
 #endif
-

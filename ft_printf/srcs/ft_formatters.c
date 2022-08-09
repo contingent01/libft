@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:17:19 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/08 22:05:39 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/09 16:50:38 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,12 @@ char	*format_p(uintptr_t n, t_tags *tags)
 {
 	char	*s;
 
-	if (tags->precision == 0 && n == 0)
-		s = NULL;
+	if (n == 0)
+	{
+		s = ft_strdup("(nil)");
+		tags->len = 5;
+		return (s);
+	}
 	else
 		s = ft_itox(n);
 	tags->len = ft_strlen(s);

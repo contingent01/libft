@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 16:29:25 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 16:30:14 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/09 18:48:43 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,3 +85,30 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 
+void	*ft_free(void *ptr)
+{
+	free(ptr);
+	return (NULL);
+}
+
+void	*ft_free_ptrs4(void *p1, void *p2, void *p3, void *p4)
+{
+	void	**pp1;
+	void	**pp2;
+	void	**pp3;
+	void	**pp4;
+
+	pp1 = (void **)p1;
+	pp2 = (void **)p2;
+	pp3 = (void **)p3;
+	pp4 = (void **)p4;
+	if (pp1 && *pp1)
+		*pp1 = ft_free(*pp1);
+	if (pp2 && *pp2)
+		*pp2 = ft_free(*pp2);
+	if (pp3 && *pp3)
+		*pp3 = ft_free(*pp3);
+	if (pp4 && *pp4)
+		*pp4 = ft_free(*pp4);
+	return (NULL);
+}

@@ -6,27 +6,27 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:15:34 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/08 22:44:31 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/09 18:24:22 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/*
-** ft_strallocat() is like ft_strjoin()
-** just some modifications :
-**
-** It get the address of (dest) string,
-** instead of using return (dest).
-**
-** If (*dest) or (src) are NULL,
-** it will still continue.
-**
-** It will free (*dest) if it's not NULL.
-**
-** then it will affect it with the new
-** allocated string.
-*/
+char	*str_capitalize(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str)
+	{
+		while (str[i])
+		{
+			str[i] = ft_toupper(str[i]);
+			i++;
+		}
+	}
+	return (str);
+}
 
 char	*ft_strnrappend(char *s1, const char *s2, size_t n, int r)
 {
@@ -55,19 +55,26 @@ char	*ft_strrappend(char *s1, const char *s2, int r)
 	return (result);
 }
 
-char	*str_capitalize(char *str)
+char	*append_value(char *s1, const char *s2, size_t s1len, size_t s2len)
 {
-	int	i;
+	char	*result;
 
-	i = 0;
-	if (str)
+	result = malloc((s1len + s2len + 1) * sizeof(char));
+	if (!result)
 	{
-		while (str[i])
-		{
-			str[i] = ft_toupper(str[i]);
-			i++;
-		}
+		free(s1);
+		return (NULL);
 	}
-	return (str);
+	ft_memcpy(result, s1, s1len);
+	ft_memcpy(result + s1len, s2, s2len);
+	result[s1len + s2len] = '\0';
+	free(s1);
+	return (result);
 }
 
+void	ft_putnstr_fd(char *s, size_t len, int fd)
+{
+	if (!s)
+		return ;
+	write(fd, s, len);
+}

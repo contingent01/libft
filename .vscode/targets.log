@@ -8,7 +8,7 @@ make: *** No rule to make target 'objs/ft_atoi.o', needed by 'libfts.a'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Aug  8 21:34:35 2022
+# Make data base, printed on Tue Aug  9 21:31:04 2022
 
 # Variables
 
@@ -53,7 +53,7 @@ _ = /usr/share/code/code
 # makefile (from 'Makefile', line 18)
 CFLAGS = -Wall -Wextra -Werror
 # environment
-JOURNAL_STREAM = 9:500539
+JOURNAL_STREAM = 9:496147
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -75,16 +75,15 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 30)
 OBJS = $(patsubst %.c, $(OBJ)/%.o,$(SRCS))
 # environment
-MANAGERPID = 42527
+MANAGERPID = 65641
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/39527/vscode-ipc-39482680-ffb9-4c26-8eb2-1581c1dd3d93.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/39527/vscode-ipc-3fb5a9e0-2b84-4f09-abe9-14a8b5d83e16.sock
 # environment
 VSCODE_CWD = /mnt/nfs/homes/mdkhissi
 # environment
- 
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_39527_Oa1r1q
+KRB5CCNAME = FILE:/tmp/krb5cc_39527_McnVsC
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -94,7 +93,7 @@ GPG_AGENT_INFO = /run/user/39527/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/e1r12p1.clusters.42paris.fr:@/tmp/.ICE-unix/43026,unix/e1r12p1.clusters.42paris.fr:/tmp/.ICE-unix/43026
+SESSION_MANAGER = local/e1r11p23.clusters.42paris.fr:@/tmp/.ICE-unix/66182,unix/e1r11p23.clusters.42paris.fr:/tmp/.ICE-unix/66182
 # environment
 XDG_RUNTIME_DIR = /run/user/39527
 # makefile (from 'Makefile', line 28)
@@ -106,7 +105,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 8ebfa33e16e042e29c327750ea996711
+INVOCATION_ID = cdbe21fa52d74059b8fd2f99b6a57c48
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -118,7 +117,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/39527/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 43399
+GIO_LAUNCHED_DESKTOP_FILE_PID = 67764
 # automatic
 %F = $(notdir $%)
 # environment
@@ -130,7 +129,7 @@ PWD = /mnt/nfs/homes/mdkhissi/dev/libft
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 42884
+SSH_AGENT_PID = 66146
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -212,8 +211,6 @@ GDK_BACKEND = x11
 # automatic
 +F = $(notdir $+)
 # environment
-NO_AT_BRIDGE = 1
-# environment
 QT_ACCESSIBILITY = 1
 # environment
 DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
@@ -246,9 +243,9 @@ LANG = C
 # environment
 DOCKER_HOST = unix:///run/user/39527/docker.sock
 # environment
-VSCODE_PID = 43399
+VSCODE_PID = 67764
 # variable set hash-table stats:
-# Load=117/1024=11%, Rehash=0, Collisions=25/160=16%
+# Load=116/1024=11%, Rehash=0, Collisions=25/159=16%
 
 # Pattern-specific Variable Values
 
@@ -256,7 +253,7 @@ VSCODE_PID = 43399
 
 # Directories
 
-# . (device 59, inode 40764758): 10 files, 1 impossibilities.
+# . (device 55, inode 40764758): 10 files, 1 impossibilities.
 
 # 10 files, 1 impossibilities in 1 directories.
 
@@ -283,6 +280,7 @@ objs/ft_putstr_fd.o:
 #  File has not been updated.
 
 # Not a target:
+ 
 objs/ft_memccpy.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -362,7 +360,6 @@ objs/ft_memcpy.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 # Not a target:
 objs/ft_itoa.o:
@@ -559,6 +556,7 @@ objs/ft_isalnum.o:
 
 # Not a target:
 objs/ft_lstadd_front.o:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -613,6 +611,6 @@ objs/ft_toupper.o:
 # strcache performance: lookups = 130 / hit rate = 47%
 # hash-table stats:
 # Load=68/8192=1%, Rehash=0, Collisions=1/130=1%
-# Finished Make data base on Mon Aug  8 21:34:35 2022
+# Finished Make data base on Tue Aug  9 21:31:05 2022
 
  

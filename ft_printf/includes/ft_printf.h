@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:23:31 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/08 22:23:24 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/09 18:25:04 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,13 @@ typedef struct s_tags
 	bool		zerow;
 	int			width;
 	int			precision;
+	char		*tmp;
 }				t_tags;
 
 int		append_text(char **s, const char *format, int *i, int count);
-void	print_s_fd(char **dest, char *s, int fd);
+void	print_s_fd(char **dest, char *s, int fd, int len);
 int		ft_vprintf(char **dest, int fd, const char *format, va_list args);
-int	ft_printf(const char *format, ...);
+int		ft_printf(const char *format, ...);
 
 void	sign_0x(char **bigStr, long n, t_tags *tags, int r);
 void	reinit_flags(t_tags *tags);
@@ -75,4 +76,12 @@ char	*format_idu(long n, t_tags *tags);
 char	*str_capitalize(char *str);;
 char	*ft_strnrappend(char *s1, const char *s2, size_t n, int r);
 char	*ft_strrappend(char *s1, const char *s2, int r);
+
+char	*append_value(char *s1, const char *s2, size_t s1len, size_t s2len);
+void	ft_putnstr_fd(char *s, size_t len, int fd);
+
+int		ft_sprintf(char **dest, const char *format, ...);
+int		ft_peprintf(const char *format, ...);
+int		ft_fprintf(int fd, const char *format, ...);
+
 #endif

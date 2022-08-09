@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 16:30:43 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 16:31:50 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/09 20:48:12 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_list	*ft_lstnew(void *content)
 		new->content = NULL;
 	else
 		new->content = content;
+	new->prev = NULL;
 	new->next = NULL;
 	return (new);
 }
@@ -51,6 +52,7 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	{
 		p = ft_lstlast(*alst);
 		p->next = new;
+		new->prev = p;
 	}
 }
 
@@ -75,6 +77,7 @@ void	ft_lstadd_front(t_list **alst, t_list *new)
 	{
 		tmp = *alst;
 		*alst = new;
+		tmp->prev = new;
 		new->next = tmp;
 	}
 }
@@ -105,5 +108,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	if (!del || !lst)
 		return ;
 	del(lst->content);
+	if (lst->prev)
+	lst->prev = lst->next;
 	free(lst);
 }
