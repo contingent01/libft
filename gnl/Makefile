@@ -6,7 +6,7 @@
 #    By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 18:39:38 by mdkhissi          #+#    #+#              #
-#    Updated: 2022/08/07 14:52:44 by mdkhissi         ###   ########.fr        #
+#    Updated: 2022/08/09 21:42:15 by mdkhissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,13 @@ CFLAGS		= -Wall -Wextra -Werror
 
 # ----------- INCLUDE --------------
 INCLUDE		=	includes
-INCLUDES	=	-I $(INCLUDE)
+INCLUDES	=	-I $(INCLUDE) -I $(LIBFT)/includes
 
 # ----------- FILES ----------------
 OBJ			= ./objs
 SRC			= ./srcs
+LIBFT		= ../core
+LFTOBJS		= $(wildcard $(LIBFT)/objs/*.o)
 SRCS		= get_next_line.c get_next_line_utils.c
 OBJS		= $(patsubst %.c, $(OBJ)/%.o,$(SRCS))
 
@@ -41,13 +43,14 @@ EOC			= \033[0;0m
 all		: ${NAME}
 $(NAME): ${OBJS}
 	@echo -e "$(PURPLE)§> $(RED)Building $(DESCRIPTION) $(GREEN)√$(EOC)"
-	@ar rcs ${NAME} ${OBJS}
+	@ar rcs ${NAME} $(LFTOBJS) ${OBJS}
 
 $(OBJ)/%.o	: $(SRC)/%.c | $(OBJ)
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJ)		:
 	@mkdir $@
+	make bonus -C $(LIBFT)
 	@echo -e "$(PURPLE)§> $(RED)Compiling object files $(GREEN)√$(EOC)"
 
 clean	:

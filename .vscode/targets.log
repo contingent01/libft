@@ -8,7 +8,7 @@ make: *** No rule to make target 'objs/ft_atoi.o', needed by 'libfts.a'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Aug  9 21:31:04 2022
+# Make data base, printed on Tue Aug  9 21:42:20 2022
 
 # Variables
 
@@ -280,7 +280,6 @@ objs/ft_putstr_fd.o:
 #  File has not been updated.
 
 # Not a target:
- 
 objs/ft_memccpy.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -308,6 +307,7 @@ all: libfts.a
 # Not a target:
 objs/ft_strtrim.o:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -556,7 +556,6 @@ objs/ft_isalnum.o:
 
 # Not a target:
 objs/ft_lstadd_front.o:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -584,6 +583,7 @@ objs/ft_strchr.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 # Not a target:
 objs/ft_strncmp.o:
@@ -611,6 +611,6 @@ objs/ft_toupper.o:
 # strcache performance: lookups = 130 / hit rate = 47%
 # hash-table stats:
 # Load=68/8192=1%, Rehash=0, Collisions=1/130=1%
-# Finished Make data base on Tue Aug  9 21:31:05 2022
+# Finished Make data base on Tue Aug  9 21:42:20 2022
 
  

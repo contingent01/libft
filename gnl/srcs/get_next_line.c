@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 14:54:28 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/31 22:47:02 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/09 23:34:33 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,30 +37,36 @@
 
 int		get_next_line(int fd, char **line)
 {
-	static t_fdlist	*listf = NULL;
+	static t_list	*listf = NULL;
+	t_gnl			*files;
 	ssize_t			ret;
 	char			*new;
-	t_fdlist		*cur;
+	t_gnl			*i;
 
-	if (!(cur = (ft_lstfind(listf, fd))))
-		ft_lstadd_front(&listf, (cur = ft_lstnew(fd)));
-	(!line) ? ft_lstdelete(&listf, fd) : (void)listf;
-	if (!line || !cur)
+	i = ft_lstfind(listf, fd, fdcmp);
+	if (!i)
+	{
+		ft_lstadd_front(&listf, ft_lstnew((void*)fd));
+		i = listf;
+	}
+	if (!line)
+		ft_lstdel(&listf, i, NULL);
+	if (!line || !i)
 		return (-1);
 	*line = NULL;
 	while (1)
 	{
-		new = rep_newl_zero(cur->buf);
-		ret = (ft_strallocat(line, cur->buf)) ? (1) : (-1);
-		if (new || ret == -1 || (ret = (read(fd, cur->buf, BFZ))) <= 0)
+		new = rep_newl_zero(i->buf);
+		ret = (ft_strallocat(line, i->buf)) ? (1) : (-1);
+		if (new || ret == -1 || (ret = (read(fd, i->buf, BFZ))) <= 0)
 			break ;
-		cur->buf[ret] = '\0';
+		i->buf[ret] = '\0';
 	}
 	(ret == -1) ? (free(*line)) : ((void)*line);
 	(ret == -1) ? (*line = NULL) : ((void)*line);
-	(ret <= 0) ? (ft_lstdelete(&listf, fd)) : ((void)listf);
-	(ret > 0 && new) ? (ft_strncpy(cur->buf, new + 1, 0)) : ((void)ret);
-	(!new) ? ft_lstdelete(&listf, fd) : (void)listf;
+	(ret <= 0) ? (ft_lstdel(&listf, i, NULL)) : ((void)listf);
+	(ret > 0 && new) ? (ft_strcpy(i->buf, new + 1)) : ((void)ret);
+	(!new) ? ft_lstdel(&listf, i, NULL) : (void)listf;
 	return ((ret > 0) ? 1 : ret);
 }
 
@@ -121,41 +127,9 @@ char	*rep_newl_zero(char *s)
 	return (NULL);
 }
 
-/*
-** Copy (src) string to (dest)
-*/
-
-void	ft_strncpy(char *dest, const char *src, size_t n)
+int	fdcmp(int fd1, int fd2)
 {
-	size_t i;
-
-	if (!dest || !src || n < 0)
-		return ;
-	i = -1;
-	if (n == 0)
-	{
-		while (src[++i])
-			dest[i] = src[i];
-		dest[i] = '\0';
-	}
-	else
-	{
-		while (src[++i] && i < n)
-			dest[i] = src[i];
-		dest[n] = '\0';
-	}
-}
-
-/*
-** Count the length of string
-*/
-
-size_t	ft_strlen(const char *s)
-{
-	size_t l;
-
-	l = 0;
-	while (s && s[l] != '\0')
-		l++;
-	return (l);
+	if (fd1 == fd2)
+		return (1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:39:27 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/09 19:26:46 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/09 23:30:47 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,7 @@ void				*ft_free_ptrs4(void *p1, void *p2, void *p3, void *p4);
 void				*ft_free_sars4(char ***sarr1, char ***sarr2, char ***sarr3, char ***sarr4);
 void				ft_print_sar(char **sarr);
 int					ft_sarr_len(char **sarr);
+
+void				ft_lstdel(t_list **alst, t_list *lst, void (*del)(void *));
+t_list				*ft_lstfind(t_list *alst, void *content2, int (*cmp)(void *, void *));
 #endif

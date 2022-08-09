@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 15:09:06 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/31 22:48:52 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/09 22:53:23 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,26 +57,6 @@ void		ft_lstadd_front(t_fdlist **alst, t_fdlist *new)
 	}
 }
 
-/*
-** Find the element that contain the value
-** of fd in the list.
-*/
-
-t_fdlist	*ft_lstfind(t_fdlist *alst, int fd)
-{
-	t_fdlist *i;
-
-	if (!alst)
-		return (NULL);
-	i = alst;
-	while (i != NULL)
-	{
-		if (fd == i->fd)
-			return (i);
-		i = i->next;
-	}
-	return (NULL);
-}
 
 /*
 ** Delete and free the element that contain (fd)

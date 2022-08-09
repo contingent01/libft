@@ -6,33 +6,25 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 16:26:19 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/07/31 22:47:59 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/09 22:47:13 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <unistd.h>
-# include <stdlib.h>
+# include "libft.h"
 
 # define BFZ 512
 
-typedef struct		s_fdlist
+typedef struct		s_gnl
 {
 	char			*buf;
 	int				fd;
-	struct s_fdlist	*next;
-}					t_fdlist;
+}					t_gnl;
 
 int					get_next_line(int fd, char **line);
 int					ft_strallocat(char **dest, char *src);
 char				*rep_newl_zero(char *s);
-void				ft_strncpy(char *dest, const char *src, size_t n);
-size_t				ft_strlen(const char *s);
-t_fdlist			*ft_lstnew(int fd);
-void				ft_lstadd_front(t_fdlist **alst, t_fdlist *new);
-t_fdlist			*ft_lstfind(t_fdlist *alst, int fd);
-void				ft_lstdelete(t_fdlist **alst, int fd);
-
+int					fdcmp(int fd1, int fd2);
 #endif

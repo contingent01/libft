@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/08/09 21:41:29 by mdkhissi          #+#    #+#              #
+#    Updated: 2022/08/09 21:42:18 by mdkhissi         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # ----------- LIBRARY --------------
 NAME		= libftprintf.a
 DESCRIPTION = Ft_Printf
@@ -15,7 +27,7 @@ INCLUDES	=	-I $(INCLUDE) -I $(LIBFT)/includes
 OBJ			= ./objs
 SRC			= ./srcs
 LIBFT		= ../core
-LFTOBJS	= 	$(wildcard $(LIBFT)/objs/*.o)
+LFTOBJS		= $(wildcard $(LIBFT)/objs/*.o)
 SRCS		= ft_printf.c ft_printf_utils.c ft_core.c ft_formatters.c ft_ntoston.c ft_parsers.c ft_sutils.c main.c
 OBJS		= $(patsubst %.c, $(OBJ)/%.o,$(SRCS))
 
@@ -39,6 +51,7 @@ $(OBJ)/%.o	: $(SRC)/%.c | $(OBJ)
 
 $(OBJ)		:
 	@mkdir $@
+	make bonus -C $(LIBFT)
 	@echo -e "$(PURPLE)§> $(RED)Compiling object files $(GREEN)√$(EOC)"
 
 clean	:
