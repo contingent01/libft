@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 14:54:28 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/10 23:52:13 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/11 00:04:32 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,10 @@ int		get_next_line(int fd, char **line)
 	while (1)
 	{
 		new = rep_newl_zero(f->buf);
+		//if (new)
+		//	printf("\n new |%s|\n", new + 1);
 		*line = ft_strappend(*line, f->buf);
-		printf("line = %s\n", *line);
+		//printf("line = %s\n", *line);
 		ret = 1 * (line > 0) - 1 * (!line);
 		if (new || ret == -1)
 			break ;
@@ -94,9 +96,10 @@ int		get_next_line(int fd, char **line)
 		if (ret <= 0)
 			break ;
 		f->buf[ret] = '\0';
+		
 		//printf("f-: buf |%s|\n", f->buf);
 	}
-	//printf("\n new |%s|\n", new + 1);
+	
 	if (ret == -1)
 		*line = ft_free(*line);
 	if (ret <= 0 || !new)
