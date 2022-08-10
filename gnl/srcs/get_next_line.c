@@ -6,11 +6,37 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 14:54:28 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/09 23:34:33 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/10 13:23:07 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
+
+int	fdcmp(void *vgnl1, void *vfd2)
+{
+	t_gnl	*gnl1;
+	int		*fd2;	
+
+	gnl1 = (t_gnl *) vgnl1;
+	fd2 = (int *)vfd2;
+	if (gnl1->fd == *fd2)
+		return (1);
+	return (0);
+}
+
+t_gnl	*fdnew(int newfd)
+{
+	t_gnl	*new;
+
+	new = malloc(sizeof(t_gnl));
+	if (!new)
+		return (NULL);
+	new->buf = malloc(sizeof(char) * (BFZ + 1));
+	new->buf[0] = '\0';
+	new->fd = newfd;
+	return (new);
+}
 
 /*
 ** Bonus version of get_next_line() :
@@ -38,15 +64,15 @@
 int		get_next_line(int fd, char **line)
 {
 	static t_list	*listf = NULL;
-	t_gnl			*files;
 	ssize_t			ret;
 	char			*new;
-	t_gnl			*i;
+	t_list			*i;
+	t_gnl			*f;
 
-	i = ft_lstfind(listf, fd, fdcmp);
+	i = ft_lstfind(listf, &fd, fdcmp);
 	if (!i)
 	{
-		ft_lstadd_front(&listf, ft_lstnew((void*)fd));
+		ft_lstadd_front(&listf, ft_lstnew(fdnew(fd)));
 		i = listf;
 	}
 	if (!line)
@@ -56,16 +82,20 @@ int		get_next_line(int fd, char **line)
 	*line = NULL;
 	while (1)
 	{
-		new = rep_newl_zero(i->buf);
-		ret = (ft_strallocat(line, i->buf)) ? (1) : (-1);
-		if (new || ret == -1 || (ret = (read(fd, i->buf, BFZ))) <= 0)
+		f = i->content;
+		new = rep_newl_zero(f->buf);
+		printf("new %s\n", new);
+		ret = (ft_strallocat(line, f->buf)) ? (1) : (-1);
+		//printf("line:|%s|\n", *line);
+		if (new || ret == -1 || (ret = (read(fd, f->buf, BFZ))) <= 0)
 			break ;
-		i->buf[ret] = '\0';
+		f->buf[ret] = '\0';
+		//printf("f-: buf |%s|\n", f->buf);
 	}
 	(ret == -1) ? (free(*line)) : ((void)*line);
 	(ret == -1) ? (*line = NULL) : ((void)*line);
 	(ret <= 0) ? (ft_lstdel(&listf, i, NULL)) : ((void)listf);
-	(ret > 0 && new) ? (ft_strcpy(i->buf, new + 1)) : ((void)ret);
+	(ret > 0 && new) ? (ft_strcpy(f->buf, new + 1)) : ((void)ret);
 	(!new) ? ft_lstdel(&listf, i, NULL) : (void)listf;
 	return ((ret > 0) ? 1 : ret);
 }
@@ -125,11 +155,4 @@ char	*rep_newl_zero(char *s)
 		return ((char *)&s[i]);
 	}
 	return (NULL);
-}
-
-int	fdcmp(int fd1, int fd2)
-{
-	if (fd1 == fd2)
-		return (1);
-	return (0);
 }

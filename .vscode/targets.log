@@ -1,251 +1,263 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'objs/ft_atoi.o', needed by 'libfts.a'.  Stop.
 
-# GNU Make 4.2.1
+# GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
-# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Aug  9 21:42:20 2022
+# Make data base, printed on Wed Aug 10 13:02:04 2022
 
 # Variables
 
-# automatic
-<D = $(patsubst %/,%,$(dir $<))
-# automatic
-?F = $(notdir $?)
-# environment
-DESKTOP_SESSION = ubuntu
-# default
-.SHELLFLAGS := -c
 # makefile (from 'Makefile', line 21)
 OBJ = ./objs
 # environment
-XDG_SESSION_CLASS = user
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
 # makefile (from 'Makefile', line 22)
 SRC = ./
 # environment
-XDG_SESSION_TYPE = x11
+GTK_RC_FILES = /etc/gtk/gtkrc:/home/dstof/.gtkrc:/home/dstof/.config/gtkrc
 # environment
-VSCODE_LOG_NATIVE = false
-# automatic
-?D = $(patsubst %/,%,$(dir $?))
+LC_NAME = fr_FR.UTF-8
+# environment
+LC_NUMERIC = fr_FR.UTF-8
+# environment
+VSCODE_CWD = /home/dstof
+# environment
+LC_ADDRESS = fr_FR.UTF-8
+# default
+MAKE_COMMAND := make
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-XAUTHORITY = /mnt/nfs/homes/mdkhissi/.Xauthority
+GDK_DPI_SCALE = 1
 # environment
-GDMSESSION = ubuntu
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
 # environment
-XMODIFIERS = @im=ibus
-# makefile
-CURDIR := /mnt/nfs/homes/mdkhissi/dev/libft
-# makefile
-SHELL = /bin/sh
-# environment
-GDM_LANG = en
-# environment
-VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
-# environment
-_ = /usr/share/code/code
-# makefile (from 'Makefile', line 18)
-CFLAGS = -Wall -Wextra -Werror
-# environment
-JOURNAL_STREAM = 9:496147
-# environment
-XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
-# makefile (from 'Makefile', line 1)
-MAKEFILE_LIST :=  Makefile
+PWD = /home/dstof/dev/libft
 # automatic
-@F = $(notdir $@)
+%D = $(patsubst %/,%,$(dir $%))
 # environment
-GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
-# 'override' directive
-GNUMAKEFLAGS := 
+MAIL = /var/spool/mail/dstof
 # environment
-MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
+XDG_DATA_DIRS = /home/dstof/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/mdkhissi/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
-# environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/39527/bus
-# environment
-VSCODE_VERBOSE_LOGGING = true
-# makefile (from 'Makefile', line 30)
-OBJS = $(patsubst %.c, $(OBJ)/%.o,$(SRCS))
-# environment
-MANAGERPID = 65641
-# environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/39527/vscode-ipc-3fb5a9e0-2b84-4f09-abe9-14a8b5d83e16.sock
-# environment
-VSCODE_CWD = /mnt/nfs/homes/mdkhissi
-# environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
-# environment
-KRB5CCNAME = FILE:/tmp/krb5cc_39527_McnVsC
-# default
-MAKE_HOST := x86_64-pc-linux-gnu
-# environment
-PATH = /mnt/nfs/homes/mdkhissi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-# environment
-GPG_AGENT_INFO = /run/user/39527/gnupg/S.gpg-agent:0:1
-# environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-SESSION_MANAGER = local/e1r11p23.clusters.42paris.fr:@/tmp/.ICE-unix/66182,unix/e1r11p23.clusters.42paris.fr:/tmp/.ICE-unix/66182
-# environment
-XDG_RUNTIME_DIR = /run/user/39527
-# makefile (from 'Makefile', line 28)
-SRCB = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
-# environment
-XDG_MENU_PREFIX = gnome-
-# environment
-VSCODE_LOG_STACK = false
-# environment
-ELECTRON_RUN_AS_NODE = 1
-# environment
-INVOCATION_ID = cdbe21fa52d74059b8fd2f99b6a57c48
-# default
-.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
-# environment
-XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/mdkhissi
-# environment
-LS_COLORS = 
-# environment
-XDG_SESSION_DESKTOP = ubuntu
-# environment
-SSH_AUTH_SOCK = /run/user/39527/keyring/ssh
-# environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 67764
+OLDPWD = /home/dstof
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
 # automatic
 %F = $(notdir $%)
 # environment
-DISPLAY = :0
+VSCODE_CODE_CACHE_PATH = /home/dstof/.config/Code/CachedData/da76f93349a72022ca4670c1b84860304616aaa2
 # environment
-VSCODE_PIPE_LOGGING = true
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session2
 # environment
-PWD = /mnt/nfs/homes/mdkhissi/dev/libft
+LANG = C
+# environment
+XAUTHORITY = /run/user/1000/xauth_PTzZBG
 # default
 .LOADED := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile
+MAKEFLAGS = pqrR
 # environment
-SSH_AGENT_PID = 66146
-# environment
-ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
-# environment
-GTK_MODULES = gail:atk-bridge
-# environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
-# environment
-HOME = /mnt/nfs/homes/mdkhissi
-# environment
-VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/mdkhissi/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
-# environment
-LOGNAME = mdkhissi
+PLASMA_USE_QT_SCALING = 1
+# makefile
+CURDIR := /home/dstof/dev/libft
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# environment
-ZSH = /mnt/nfs/homes/mdkhissi/.oh-my-zsh
-# environment
-VSCODE_HANDLES_UNCAUGHT_ERRORS = true
-# environment
-GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# makefile (from 'Makefile', line 23)
+SRCS = ft_atoi.c ft_strjoin.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 # automatic
-^D = $(patsubst %/,%,$(dir $^))
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
+# environment
+MFLAGS = -pqrR
+# default
+.SHELLFLAGS := -c
+# environment
+WAYLAND_DISPLAY = wayland-0
+# environment
+XDG_CONFIG_DIRS = /home/dstof/.config/kdedefaults:/etc/xdg
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XCURSOR_THEME = breeze_cursors
+# environment
+XDG_SESSION_DESKTOP = KDE
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_PID = 5376
+# environment
+XDG_SESSION_TYPE = wayland
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+SESSION_MANAGER = local/dstof:@/tmp/.ICE-unix/1326,unix/dstof:/tmp/.ICE-unix/1326
+# automatic
+*F = $(notdir $*)
+# environment
+QT_QPA_PLATFORMTHEME = qt5ct
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile (from 'Makefile', line 30)
+OBJS = $(patsubst %.c, $(OBJ)/%.o,$(SRCS))
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
 # default
-MAKECMDGOALS := all
+MAKEFILES := 
 # environment
-QT_IM_MODULE = ibus
-# makefile (from 'Makefile', line 23)
-SRCS = ft_atoi.c ft_strjoin.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
+LC_MONETARY = fr_FR.UTF-8
 # environment
-SHLVL = 1
-# makefile (from 'Makefile', line 17)
-CC = clang
-# environment
-IM_CONFIG_PHASE = 1
-# default
-MAKE_VERSION := 4.2.1
-# environment
-USER = mdkhissi
-# makefile
-.DEFAULT_GOAL := all
-# environment
-XDG_CURRENT_DESKTOP = Unity
-# environment
-LIBVIRT_DEFAULT_URI = qemu:///system
-# environment
-LESS = -R
+MOTD_SHOWN = pam
 # automatic
-%D = $(patsubst %/,%,$(dir $%))
-# makefile (from 'Makefile', line 31)
-OBJB = $(patsubst %.c, $(OBJ)/%.o,$(SRCB))
-# default
-MAKE_COMMAND := make
+^F = $(notdir $^)
 # environment
-OLDPWD = /mnt/nfs/homes/mdkhissi
-# default
-.VARIABLES := 
+LC_TIME = fr_FR.UTF-8
+# environment
+GRADLE_HOME = /usr/share/java/gradle
+# environment
+INVOCATION_ID = 1abc88c104c1493ba3e59842b411bd4c
+# environment
+LC_TELEPHONE = fr_FR.UTF-8
+# environment
+GDK_SCALE = 1
 # automatic
-*F = $(notdir $*)
+?F = $(notdir $?)
 # environment
-LANGUAGE = en
+KDE_APPLICATIONS_AS_SCOPE = 1
+# makefile (from 'Makefile', line 14)
+NAME = libfts.a
 # environment
-XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+XDG_SEAT = seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/39527/vscode-a70329a3-1.68.1-main.sock
-# makefile
-MAKEFLAGS = pqrR
-# environment
-MFLAGS = -pqrR
-# automatic
-*D = $(patsubst %/,%,$(dir $*))
-# automatic
-+D = $(patsubst %/,%,$(dir $+))
-# environment
-GDK_BACKEND = x11
+XDG_CURRENT_DESKTOP = KDE
 # automatic
 +F = $(notdir $+)
 # environment
-QT_ACCESSIBILITY = 1
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
+DESKTOP_SESSION = plasmawayland
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = KDE
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+BROWSER = firefox
+# environment
+LOGNAME = dstof
+# environment
+XDG_VTNR = 2
+# makefile
+.DEFAULT_GOAL := all
+# environment
+SYSTEMD_EXEC_PID = 1390
+# environment
+EDITOR = nano
+# environment
+DISPLAY = :1
+# environment
+USER = dstof
 # default
-MAKEFILES := 
+MAKE_VERSION := 4.3
+# environment
+KDE_SESSION_UID = 1000
+# environment
+MANAGERPID = 1043
+# environment
+QT_WAYLAND_FORCE_DPI = 96
+# environment
+LC_MEASUREMENT = fr_FR.UTF-8
+# environment
+DEBUGINFOD_URLS = https://debuginfod.archlinux.org
+# environment
+XKB_DEFAULT_LAYOUT = us
+# environment
+_ = /usr/bin/make
+# environment
+LC_PAPER = fr_FR.UTF-8
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# makefile (from 'Makefile', line 18)
+CFLAGS = -Wall -Wextra -Werror
+# environment
+JOURNAL_STREAM = 8:23503
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+GTK2_RC_FILES = /etc/gtk-2.0/gtkrc:/home/dstof/.gtkrc-2.0:/home/dstof/.config/gtkrc-2.0
+# environment
+HOME = /home/dstof
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-28ec9f9b-1.70.0-main.sock
+# environment
+XDG_SESSION_ID = 2
+# environment
+XCURSOR_SIZE = 24
+# default
+.RECIPEPREFIX := 
 # automatic
 <F = $(notdir $<)
-# environment
-PAGER = less
-# environment
-LC_ALL = C
-# environment
-GJS_DEBUG_TOPICS = JS ERROR;JS LOG
-# automatic
-^F = $(notdir $^)
 # default
 SUFFIXES := 
 # environment
-CHROME_DESKTOP = code-url-handler.desktop
+QT_AUTO_SCREEN_SCALE_FACTOR = 0
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+KDE_SESSION_VERSION = 5
 # default
-.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
+# makefile (from 'Makefile', line 17)
+CC = clang
+# makefile (from 'Makefile', line 31)
+OBJB = $(patsubst %.c, $(OBJ)/%.o,$(SRCB))
 # environment
-GJS_DEBUG_OUTPUT = stderr
-# makefile (from 'Makefile', line 14)
-NAME = libfts.a
-# default
-.RECIPEPREFIX := 
+KDE_FULL_SESSION = true
+# makefile (from 'Makefile', line 28)
+SRCB = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 # environment
-LANG = C
-# environment
-DOCKER_HOST = unix:///run/user/39527/docker.sock
-# environment
-VSCODE_PID = 67764
+LC_IDENTIFICATION = fr_FR.UTF-8
 # variable set hash-table stats:
-# Load=116/1024=11%, Rehash=0, Collisions=25/159=16%
+# Load=122/1024=12%, Rehash=0, Collisions=14/170=8%
 
 # Pattern-specific Variable Values
 
@@ -253,7 +265,7 @@ VSCODE_PID = 67764
 
 # Directories
 
-# . (device 55, inode 40764758): 10 files, 1 impossibilities.
+# . (device 65025, inode 540829): 10 files, 1 impossibilities.
 
 # 10 files, 1 impossibilities in 1 directories.
 
@@ -264,86 +276,10 @@ objs/%.o: %.c | objs
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # 1 implicit rules, 0 (0.0%) terminal.
-
 # Files
 
 # Not a target:
-objs/ft_strnstr.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objs/ft_putstr_fd.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objs/ft_memccpy.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objs/ft_putchar_fd.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objs/ft_atoi.o:
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has not been updated.
-
-all: libfts.a
-#  Phony target (prerequisite of .PHONY).
-#  Command line target.
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-
-# Not a target:
-objs/ft_strtrim.o:
-#  Implicit rule search has not been done.
- 
-#  Modification time never checked.
-#  File has not been updated.
-
-objs:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 45):
-	mkdir $@
-	
-
-.PHONY: all clean fclean re bonus
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objs/ft_lstadd_back.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objs/ft_putendl_fd.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objs/ft_strmapi.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objs/ft_lstiter.o:
+objs/ft_tolower.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -352,23 +288,24 @@ libfts.a: objs/ft_atoi.o objs/ft_strjoin.o objs/ft_bzero.o objs/ft_calloc.o objs
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+ 
 #  recipe to execute (from 'Makefile', line 36):
 	ar rcs ${NAME} ${OBJS}
 
 # Not a target:
-objs/ft_memcpy.o:
+objs/ft_strchr.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-objs/ft_itoa.o:
+objs/ft_toupper.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-objs/ft_memcmp.o:
+objs/ft_lstiter.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -380,26 +317,25 @@ objs/ft_strlen.o:
 #  File has not been updated.
 
 # Not a target:
-Makefile:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-07 16:11:53.226384695
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-objs/ft_isdigit.o:
+objs/ft_lstadd_front.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-objs/ft_lstlast.o:
+objs/ft_calloc.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-objs/ft_memchr.o:
+objs/ft_lstadd_back.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objs/ft_strnstr.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -411,37 +347,58 @@ objs/ft_memset.o:
 #  File has not been updated.
 
 # Not a target:
-objs/ft_tolower.o:
+objs/ft_strmapi.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-objs/ft_strrchr.o:
+objs/ft_substr.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-objs/ft_strjoin.o:
+objs/ft_memmove.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-objs/ft_split.o:
+objs/ft_lstmap.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-objs/ft_lstclear.o:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-07 15:00:10.592554065
+#  File has been updated.
+#  Successfully updated.
+
+objs:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 45):
+	mkdir $@
+	
+
+# Not a target:
+objs/ft_lstsize.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-objs/ft_strlcat.o:
+objs/ft_isalnum.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objs/ft_strlcpy.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -454,28 +411,8 @@ bonus: objs/ft_lstnew.o objs/ft_lstadd_front.o objs/ft_lstsize.o objs/ft_lstlast
 #  recipe to execute (from 'Makefile', line 48):
 	ar rcs ${NAME} ${OBJS} ${OBJB}
 
-fclean: clean
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 54):
-	rm -f ${NAME}
-
 # Not a target:
 objs/ft_bzero.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objs/ft_isprint.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-.DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -486,14 +423,8 @@ objs/ft_lstnew.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-re: fclean all
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-
 # Not a target:
-objs/ft_putnbr_fd.o:
+objs/ft_lstlast.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -507,13 +438,19 @@ clean:
 	rm -rf ${OBJ}
 
 # Not a target:
-objs/ft_calloc.o:
+objs/ft_isdigit.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-objs/ft_substr.o:
+objs/ft_lstclear.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objs/ft_strrchr.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -525,37 +462,7 @@ objs/ft_isalpha.o:
 #  File has not been updated.
 
 # Not a target:
-objs/ft_lstsize.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objs/ft_strlcpy.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objs/ft_lstmap.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objs/ft_isascii.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objs/ft_isalnum.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objs/ft_lstadd_front.o:
+objs/ft_putendl_fd.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -572,18 +479,81 @@ objs/ft_lstdelone.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
 # Not a target:
-objs/ft_memmove.o:
+objs/ft_memcmp.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-objs/ft_strchr.o:
+objs/ft_putnbr_fd.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+# Not a target:
+objs/ft_memchr.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
  
+# Not a target:
+objs/ft_strtrim.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objs/ft_itoa.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objs/ft_split.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: libfts.a
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 54):
+	rm -f ${NAME}
+
+# Not a target:
+objs/ft_memcpy.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objs/ft_isascii.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 objs/ft_strncmp.o:
@@ -592,13 +562,55 @@ objs/ft_strncmp.o:
 #  File has not been updated.
 
 # Not a target:
-objs/ft_toupper.o:
+objs/ft_putchar_fd.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objs/ft_memccpy.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objs/ft_strjoin.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objs/ft_atoi.o:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+ 
+# Not a target:
+objs/ft_strlcat.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PHONY: all clean fclean re bonus
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objs/ft_isprint.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objs/ft_putstr_fd.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=54/1024=5%, Rehash=0, Collisions=7/154=5%
+# Load=54/1024=5%, Rehash=0, Collisions=4/154=3%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -610,7 +622,7 @@ objs/ft_toupper.o:
 
 # strcache performance: lookups = 130 / hit rate = 47%
 # hash-table stats:
-# Load=68/8192=1%, Rehash=0, Collisions=1/130=1%
-# Finished Make data base on Tue Aug  9 21:42:20 2022
+# Load=68/8192=1%, Rehash=0, Collisions=0/130=0%
+# Finished Make data base on Wed Aug 10 13:02:04 2022
 
  

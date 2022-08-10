@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 15:09:06 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/09 22:53:23 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/10 12:57:13 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 ** then copy (fd) and intiatialize,
 ** (buf) with "".
 */
-
-t_fdlist	*ft_lstnew(int fd)
+/*
+t_fdlist	*ft_lsttnew(int fd)
 {
 	t_fdlist *new;
 
@@ -31,7 +31,7 @@ t_fdlist	*ft_lstnew(int fd)
 	new->next = NULL;
 	return (new);
 }
-
+*/
 /*
 ** if the list is empty
 ** the first pointer is linked to the new,
@@ -40,8 +40,8 @@ t_fdlist	*ft_lstnew(int fd)
 ** make new as first element,
 ** then $tmp as next element.
 */
-
-void		ft_lstadd_front(t_fdlist **alst, t_fdlist *new)
+/*
+void		ft_lsttadd_front(t_fdlist **alst, t_fdlist *new)
 {
 	t_fdlist *tmp;
 
@@ -57,12 +57,12 @@ void		ft_lstadd_front(t_fdlist **alst, t_fdlist *new)
 	}
 }
 
-
+*/
 /*
 ** Delete and free the element that contain (fd)
 ** in the list
 */
-
+/*
 void		ft_lstdelete(t_fdlist **alst, int fd)
 {
 	t_fdlist *cur;
@@ -87,3 +87,4 @@ void		ft_lstdelete(t_fdlist **alst, int fd)
 		free(cur);
 	}
 }
+*/
