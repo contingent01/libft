@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 14:54:28 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/10 13:23:07 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/10 23:52:13 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,37 +67,43 @@ int		get_next_line(int fd, char **line)
 	ssize_t			ret;
 	char			*new;
 	t_list			*i;
-	t_gnl			*f;
+	static t_gnl			*f = NULL;
 
+	if (!line)
+		return (-1);
 	i = ft_lstfind(listf, &fd, fdcmp);
 	if (!i)
 	{
-		ft_lstadd_front(&listf, ft_lstnew(fdnew(fd)));
-		i = listf;
+		i = ft_lstnew(fdnew(fd));
+		if (!i)
+			return (-1);
+		ft_lstadd_back(&listf, i);
 	}
-	if (!line)
-		ft_lstdel(&listf, i, NULL);
-	if (!line || !i)
-		return (-1);
+	f = i->content;
 	*line = NULL;
+	printf("\nbuf = %s\n", f->buf);
 	while (1)
 	{
-		f = i->content;
 		new = rep_newl_zero(f->buf);
-		printf("new %s\n", new);
-		ret = (ft_strallocat(line, f->buf)) ? (1) : (-1);
-		//printf("line:|%s|\n", *line);
-		if (new || ret == -1 || (ret = (read(fd, f->buf, BFZ))) <= 0)
+		*line = ft_strappend(*line, f->buf);
+		printf("line = %s\n", *line);
+		ret = 1 * (line > 0) - 1 * (!line);
+		if (new || ret == -1)
+			break ;
+		ret = read(fd, f->buf, 10);
+		if (ret <= 0)
 			break ;
 		f->buf[ret] = '\0';
 		//printf("f-: buf |%s|\n", f->buf);
 	}
-	(ret == -1) ? (free(*line)) : ((void)*line);
-	(ret == -1) ? (*line = NULL) : ((void)*line);
-	(ret <= 0) ? (ft_lstdel(&listf, i, NULL)) : ((void)listf);
-	(ret > 0 && new) ? (ft_strcpy(f->buf, new + 1)) : ((void)ret);
-	(!new) ? ft_lstdel(&listf, i, NULL) : (void)listf;
-	return ((ret > 0) ? 1 : ret);
+	//printf("\n new |%s|\n", new + 1);
+	if (ret == -1)
+		*line = ft_free(*line);
+	if (ret <= 0 || !new)
+		ft_lstdel(&listf, i, NULL);
+	if (ret > 0 && new)
+		ft_memmove(f->buf, new + 1, ft_strlen(new + 1));
+	return (ret > 0 ? 1 : ret);
 }
 
 /*

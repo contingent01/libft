@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 12:57:34 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/10 13:10:40 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/10 23:49:46 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	main(void)
 
 	fd = open("out", O_RDONLY);
 	line = NULL;
-	while (get_next_line(fd, &line))
+	while (get_next_line(fd, &line) > 0)
 	{
-		printf("line = |%s|\n", line);
+		//printf("main line = %s\n", line);
 	}
 }
