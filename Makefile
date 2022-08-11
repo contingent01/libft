@@ -6,7 +6,7 @@
 #    By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 18:39:38 by mdkhissi          #+#    #+#              #
-#    Updated: 2022/08/11 16:31:38 by mdkhissi         ###   ########.fr        #
+#    Updated: 2022/08/11 16:42:13 by mdkhissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,23 +53,29 @@ EOC			= \033[0;0m
 # ----------- RULES ----------------
 all		: ${NAME}
 $(NAME)	: $(C_OBJS) $(P_OBJS) $(G_OBJS)
-	@echo "$(PURPLE)§> $(RED)Building $(DESCRIPTION) $(GREEN)√$(EOC)"
 	ar rcs ${NAME} $(C_OBJS) $(P_OBJS) $(G_OBJS)
+	@echo "$(PURPLE)§> $(RED)Building $(DESCRIPTION) $(GREEN)√$(EOC)"
 
-$(CORE)/$(OBJ)/%.o		: $(CORE)/$(SRC)/%.c | compiling
+$(CORE)/$(OBJ)/%.o		: $(CORE)/$(SRC)/%.c | $(CORE)/$(OBJ)
 	$(CC) $(CFLAGS) $(C_INCLUDES) -c $< -o $@
 
-$(PRINTF)/$(OBJ)/%.o	: $(PRINTF)/$(SRC)/%.c
+$(PRINTF)/$(OBJ)/%.o	: $(PRINTF)/$(SRC)/%.c | $(PRINTF)/$(OBJ)
 	$(CC) $(CFLAGS) $(C_INCLUDES) $(P_INCLUDES) -c $< -o $@
 
-$(GNL)/$(OBJ)/%.o		: $(GNL)/$(SRC)/%.c
+$(GNL)/$(OBJ)/%.o		: $(GNL)/$(SRC)/%.c | $(GNL)/$(OBJ)
 	$(CC) $(CFLAGS) $(C_INCLUDES) $(G_INCLUDES) -c $< -o $@
 
-compiling		:	
-	-mkdir $(CORE)/$(OBJ)
-	-mkdir $(PRINTF)/$(OBJ)
-	-mkdir $(GNL)/$(OBJ)
-	@echo "$(PURPLE)§> $(RED)Compiling object files $(GREEN)√$(EOC)"
+$(CORE)/$(OBJ)		:	
+	@-mkdir $(CORE)/$(OBJ)
+	@echo "$(PURPLE)§> $(RED)Compiling $(CORE) object files$(EOC)"
+
+$(PRINTF)/$(OBJ)		:	
+	@-mkdir $(PRINTF)/$(OBJ)
+	@echo "$(PURPLE)§> $(RED)Compiling $(PRINTF) object files$(EOC)"
+
+$(GNL)/$(OBJ)		:	
+	@-mkdir $(GNL)/$(OBJ)
+	@echo "$(PURPLE)§> $(RED)Compiling $(GNL) object files$(EOC)"
 
 bonus	: clean $(C_OBJS) $(P_OBJS) $(G_OBJS)
 	@echo "$(PURPLE)§> $(RED)Building $(DESCRIPTION) $(GREEN)√$(EOC)"
