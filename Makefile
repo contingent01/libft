@@ -6,7 +6,7 @@
 #    By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 18:39:38 by mdkhissi          #+#    #+#              #
-#    Updated: 2022/08/11 16:42:13 by mdkhissi         ###   ########.fr        #
+#    Updated: 2022/08/11 20:45:14 by mdkhissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ $(PRINTF)/$(OBJ)/%.o	: $(PRINTF)/$(SRC)/%.c | $(PRINTF)/$(OBJ)
 	$(CC) $(CFLAGS) $(C_INCLUDES) $(P_INCLUDES) -c $< -o $@
 
 $(GNL)/$(OBJ)/%.o		: $(GNL)/$(SRC)/%.c | $(GNL)/$(OBJ)
-	$(CC) $(CFLAGS) $(C_INCLUDES) $(G_INCLUDES) -c $< -o $@
+	$(CC) $(CFLAGS) $(C_INCLUDES) $(G_INCLUDES) -D BUFFER_SIZE=64 -c $< -o $@
 
 $(CORE)/$(OBJ)		:	
 	@-mkdir $(CORE)/$(OBJ)

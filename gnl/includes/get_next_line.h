@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 16:26:19 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/11 00:13:52 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/11 20:44:27 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../../core/includes/libft.h"
 
-# define BFZ 6
+# define BFZ BUFFER_SIZE
 
 typedef struct		s_gnl
 {

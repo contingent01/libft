@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 14:54:28 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/11 16:52:42 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/11 22:51:09 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	fdcmp(void *vgnl1, void *vfd2)
 {
