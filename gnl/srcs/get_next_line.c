@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 14:54:28 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/11 00:24:53 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/11 13:06:34 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int		get_next_line(int fd, char **line)
 		if (new || ret == -1)
 			break ;
 		ret = read(fd, f->buf, BFZ);
-		printf("ret = %zu\n", ret);
+		//printf("ret = %zu\n", ret);
 		if (ret <= 0)
 			break ;
 		f->buf[ret] = '\0';

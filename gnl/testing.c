@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 12:57:34 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/11 00:24:02 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/08/11 13:07:33 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ int	main(void)
 		if (!*line)
 			break ;
 		printf("main line = %s\n", line);
+		free(line);
+		line = NULL;
 	}
 }
