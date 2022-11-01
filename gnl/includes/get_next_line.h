@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 16:26:19 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/11 20:44:27 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/10/23 19:59:39 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ typedef struct		s_gnl
 	int				fd;
 }					t_gnl;
 
-int					get_next_line(int fd, char **line);
-char				*rep_newl_zero(char *s);
+int		fdcmp(void *vgnl1, void *vfd2);
+t_gnl*	fdnew(int newfd);
+void	fddel(void* vgnl);
+t_list*	find_add_fd(t_list** fdlst, int fd);
+void	printfd(void *content);
+char*	get_next_line(int fd);
+
 #endif

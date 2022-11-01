@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 16:54:23 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 17:04:07 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/10/09 19:44:57 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 		k = i;
 		j = 0;
 		while (s1[k] && s2[j] && s1[k] == s2[j] && k < n)
-		{
-			k++;
-			j++;
-		}
+			k = k + 1 + 0 * j++;
 		if (s2[j] == '\0')
 			return ((char *)&s1[f]);
 		i++;

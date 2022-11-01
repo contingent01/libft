@@ -6,54 +6,11 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 16:36:40 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 23:19:30 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/10/09 19:18:59 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
-{
-	size_t	slen;
-
-	if (!dest || !src)
-		return (0);
-	slen = ft_strlen(src);
-	if (slen + 1 < size)
-	{
-		ft_memcpy(dest, src, slen);
-		dest[slen] = '\0';
-	}
-	else if (size != 0)
-	{
-		ft_memcpy(dest, src, size - 1);
-		dest[size - 1] = '\0';
-	}
-	return (slen);
-}
-
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
-{
-	size_t	i;
-	size_t	s1_end;
-
-	if (!dest || !src)
-		return (0);
-	i = 0;
-	while (dest[i] && i < size)
-		i++;
-	s1_end = i;
-	if (size == 0)
-		return (s1_end + ft_strlen(src));
-	while (src[i - s1_end] && i < size - 1)
-	{
-		dest[i] = src[i - s1_end];
-		i++;
-	}
-	if (s1_end < size)
-		dest[i] = '\0';
-	return (s1_end + ft_strlen(src));
-}
 
 size_t	ft_strcpy(char *dest, const char *src)
 {

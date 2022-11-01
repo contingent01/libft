@@ -5,86 +5,63 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/07 16:32:35 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 16:33:15 by mdkhissi         ###   ########.fr       */
+/*   Created: 2022/10/09 19:25:00 by mdkhissi          #+#    #+#             */
+/*   Updated: 2022/10/24 12:33:42 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Apply f() to every item in the list
+** Clear the list and free it
 */
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*i;
-
-	if (!lst || !f)
-		return ;
-	i = lst;
-	while (i)
-	{
-		f(i->content);
-		i = i->next;
-	}
-}
-
-
-t_list	*ft_lstlast(t_list *lst)
-{
-	t_list	*i;
-
-	if (!lst)
-		return (NULL);
-	i = lst;
-	while (i->next != NULL)
-		i = i->next;
-	return (i);
-}
-
-/*
-** Create a new list that have elements
-** contents been changed by f()
-*/
-
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{
-	t_list	*new;
+	t_list	*tmpnext;
 	t_list	*tmp;
-	t_list	*i;
 
-	if (!lst || !f || !del)
-		return (NULL);
-	new = ft_lstnew(f(lst->content));
-	if (!new)
-		return (NULL);
-	i = new;
-	lst = lst->next;
-	while (lst)
+	if (!lst || !del)
+		return ;
+	tmp = *lst;
+	while (tmp)
 	{
-		tmp = ft_lstnew(f(lst->content));
-		if (!tmp)
-		{
-			ft_lstclear(&new, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&i, tmp);
-		i = i->next;
-		lst = lst->next;
+		tmpnext = tmp->next;
+		ft_lstdelone(tmp, del);
+		tmp = tmpnext;
 	}
-	return (new);
+	*lst = NULL;
 }
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	int	count;
+	if (!lst)
+		return ;
+	if (del)
+		del(lst->content);
+	free(lst);
+}
 
-	count = 0;
-	while (lst)
+void	ft_lstdel(t_list **alst, t_list *lst, void (*del)(void *))
+{
+	if (!alst || !*alst || !lst)
+		return ;
+	if (!lst->prev && !lst->next)
 	{
-		count++;
-		lst = lst->next;
+		ft_lstclear(alst, del);
+		return ;
 	}
-	return (count);
+	if (lst->prev)
+	{
+		lst->prev->next = lst->next;
+		if (lst->next)
+			lst->next->prev = lst->prev;
+	}
+	else
+	{
+		*alst = lst->next;
+		if (lst->next)
+			lst->next->prev = *alst;
+	}
+	ft_lstdelone(lst, del);
 }

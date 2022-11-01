@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 16:33:30 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/09 21:37:35 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/10/09 19:19:55 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,3 @@ void	ft_putnbr_fd(int nb, int fd)
 	c += '0';
 	ft_putchar_fd(c, fd);
 }
-

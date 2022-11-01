@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 16:30:43 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/09 23:33:47 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/10/09 19:40:34 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,61 +80,4 @@ void	ft_lstadd_front(t_list **alst, t_list *new)
 		tmp->prev = new;
 		new->next = tmp;
 	}
-}
-
-/*
-** Clear the list and free it
-*/
-
-void	ft_lstclear(t_list **lst, void (*del)(void *))
-{
-	t_list	*tmpnext;
-	t_list	*tmp;
-
-	if (!lst || !del)
-		return ;
-	tmp = *lst;
-	while (tmp)
-	{
-		tmpnext = tmp->next;
-		ft_lstdelone(tmp, del);
-		tmp = tmpnext;
-	}
-	*lst = NULL;
-}
-
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
-{
-	if (!lst)
-		return ;
-	if (del)
-		del(lst->content);
-	free(lst);
-}
-
-void	ft_lstdel(t_list **alst, t_list *lst, void (*del)(void *))
-{
-	if (!alst || !*alst || !lst)
-		return ;
-	if (lst->prev)
-		lst->prev = lst->next;
-	else
-		*alst = lst->next;
-	ft_lstdelone(lst, del);
-}
-
-t_list	*ft_lstfind(t_list *alst, void *content2, int (*cmp)(void *, void *))
-{
-	t_list	*i;
-
-	if (!alst)
-		return (NULL);
-	i = alst;
-	while (i != NULL)
-	{
-		if (!cmp(i->content, content2))
-			return (i);
-		i = i->next;
-	}
-	return (NULL);
 }

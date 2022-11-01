@@ -6,7 +6,7 @@
 #    By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 18:39:38 by mdkhissi          #+#    #+#              #
-#    Updated: 2022/08/11 20:45:14 by mdkhissi         ###   ########.fr        #
+#    Updated: 2022/10/24 10:43:45 by mdkhissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,22 +33,13 @@ GNL			= gnl
 OBJ			= objs
 SRC			= srcs
 C_SRCS		= ft_atois.c ft_c.c ft_c2.c ft_mem.c ft_mem2.c ft_print.c ft_str.c ft_str2.c ft_str3.c \
-				ft_str4.c ft_split.c ft_strtrim.c ft_sarr.c ft_lst.c ft_lst2.c
+				ft_str4.c ft_str5.c ft_split.c ft_strtrim.c ft_sarr.c ft_lst.c ft_lst2.c ft_lst3.c
 P_SRCS		= ft_printf.c ft_printf_utils.c ft_core.c ft_formatters.c ft_ntoston.c ft_parsers.c \
 				ft_sutils.c main.c
 G_SRCS		= get_next_line.c
 C_OBJS		= $(patsubst %.c, $(CORE)/$(OBJ)/%.o,$(C_SRCS))
 P_OBJS		= $(patsubst %.c, $(PRINTF)/$(OBJ)/%.o,$(P_SRCS))
 G_OBJS		= $(patsubst %.c, $(GNL)/$(OBJ)/%.o,$(G_SRCS))
-
-# ----------- COLORS ---------------
-BLACK		= \033[1;30m
-RED			= \033[1;31m
-GREEN		= \033[1;32m
-PURPLE		= \033[1;35m
-CYAN		= \033[1;36m
-WHITE		= \033[1;37m
-EOC			= \033[0;0m
 
 # ----------- RULES ----------------
 all		: ${NAME}
@@ -90,3 +81,12 @@ fclean	:	clean
 re		:	fclean all
 
 .PHONY	: all clean fclean re bonus
+
+# ----------- COLORS ---------------
+BLACK		= \033[1;30m
+RED			= \033[1;31m
+GREEN		= \033[1;32m
+PURPLE		= \033[1;35m
+CYAN		= \033[1;36m
+WHITE		= \033[1;37m
+EOC			= \033[0;0m

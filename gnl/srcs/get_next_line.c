@@ -6,11 +6,12 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 14:54:28 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/11 16:52:42 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/10/24 22:14:13 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/get_next_line.h"
+#include <stdio.h>
 
 int	fdcmp(void *vgnl1, void *vfd2)
 {
@@ -32,9 +33,21 @@ t_gnl	*fdnew(int newfd)
 	if (!new)
 		return (NULL);
 	new->buf = malloc(sizeof(char) * (BFZ + 1));
+	if (!new->buf)
+		return (NULL);
 	new->buf[0] = '\0';
+	new->buf[BFZ] = '\0';
 	new->fd = newfd;
 	return (new);
+}
+
+void	fddel(void* vgnl)
+{
+	t_gnl*	f;
+
+	f = (t_gnl *)vgnl;
+	free(f->buf);
+	free(f);
 }
 
 /*
@@ -60,66 +73,86 @@ t_gnl	*fdnew(int newfd)
 ** that wrong fd.
 */
 
-int		get_next_line(int fd, char **line)
+t_list*	find_add_fd(t_list** fdlst, int fd)
 {
-	static t_list	*listf = NULL;
-	ssize_t			ret;
-	char			*new;
-	t_list			*i;
-	t_gnl			*f = NULL;
+	t_list*	i;
 
-	if (!line)
-		return (-1);
-	i = ft_lstfind(listf, &fd, fdcmp);
+	i = ft_lstfind(*fdlst, &fd, fdcmp);
 	if (!i)
 	{
-		i = ft_lstnew(fdnew(fd));
+		i = ft_lstnew((void *)fdnew(fd));
 		if (!i)
-			return (-1);
-		ft_lstadd_back(&listf, i);
+			return (NULL);
+		ft_lstadd_front(fdlst, i);
 	}
+	return (i);
+}
+
+void	printfd(void* content)
+{
+	t_gnl*	g;
+
+	g = (t_gnl*) content;
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("fd = ", 1);
+	ft_putnbr_fd(g->fd, 1);
+	ft_putchar_fd('\t', 1);
+	ft_putstr_fd("buf = ", 1);
+	ft_putstr_fd(g->buf, 1);
+	ft_putchar_fd('\n', 1);
+}
+
+ssize_t	cat_buf_to_line(char** line, char* buf)
+{
+	char*	new;
+
+	new = ft_strchr(buf, '\n');
+	if (new)
+		*line = ft_strnappend(*line, buf, new - buf + 1);
+	else
+		*line = ft_strappend(*line, buf);
+	if (!*line)
+		return (-1);
+	if (!new)
+		return (-1);
+	if (*line)
+		return (1);
+	if (new)
+	{
+		ft_strcpy(buf, new + 1);
+		return (1);
+	}
+	return (1);
+}
+
+char	*get_next_line(int fd)
+{
+	static t_list*	fdlst = NULL;
+	t_list*			i;
+	t_gnl*			f;
+	ssize_t			ret;
+	char*			line;
+
+	//ft_lstiter(fdlst, printfd);
+	i = find_add_fd(&fdlst, fd);
 	f = i->content;
-	*line = NULL;
+	line = NULL;
 	while (1)
 	{
-		new = rep_newl_zero(f->buf);
-		*line = ft_strappend(*line, f->buf);
-		ret = 1 * (line != NULL) - 1 * (!line);
-		if (new || ret == -1)
+		ret = cat_buf_to_line(&line, f->buf);
+		if (ret == -1)
 			break ;
 		ret = read(fd, f->buf, BFZ);
-		//printf("ret = %zu\n", ret);
 		if (ret <= 0)
 			break ;
 		f->buf[ret] = '\0';
-		//printf("buf |%s|\n", f->buf);
 	}
-	
+	//printf("\n\t\tline = %s\n", line);
+	if (ret <= 0)
+		ft_lstdel(&fdlst, i, fddel);
 	if (ret == -1)
-		*line = ft_free(*line);
-	if (ret <= 0 || !new)
-		ft_lstdel(&listf, i, NULL);
-	if (ret > 0 && new)
-		ft_strcpy(f->buf, new + 1);
-	return (ret > 0 ? 1 : ret);
-}
-
-/*
-** This function search for '\n',
-** and replace it by '\0'.
-*/
-
-char	*rep_newl_zero(char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] && s[i] != '\n')
-		i++;
-	if (s[i] != '\0')
-	{
-		s[i] = '\0';
-		return ((char *)&s[i]);
-	}
-	return (NULL);
+		return (ft_free(line));
+	if (!*line && ret == 0)
+		return (ft_free(line));
+	return (line);
 }
