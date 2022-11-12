@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 19:18:35 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/10/11 19:32:02 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/11/12 19:51:17 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	return (s1_end + ft_strlen(src));
 }
 
-char*	ft_strepchr(char* s, char c, char r)
+char	*ft_strepchr(char *s, char c, char r)
 {
-	char*	c_to_rep;
+	char	*c_to_rep;
 
 	c_to_rep = ft_strchr(s, c);
 	if (!c_to_rep)
@@ -66,9 +66,9 @@ char*	ft_strepchr(char* s, char c, char r)
 	return (c_to_rep);
 }
 
-char*	ft_strrepchr(char* s, char c, char r)
+char	*ft_strrepchr(char *s, char c, char r)
 {
-	char*	c_to_rep;
+	char	*c_to_rep;
 
 	c_to_rep = ft_strrchr(s, c);
 	if (!c_to_rep)

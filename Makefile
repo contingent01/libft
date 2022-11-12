@@ -6,7 +6,7 @@
 #    By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 18:39:38 by mdkhissi          #+#    #+#              #
-#    Updated: 2022/10/24 10:43:45 by mdkhissi         ###   ########.fr        #
+#    Updated: 2022/11/12 23:33:41 by mdkhissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ DESCRIPTION	= Libft
 
 # ----------- COMPILER FLAGS -------
 CC			= clang
-CFLAGS		= -Wall -Wextra -Werror -g3
+CFLAGS		= -Wall -Wextra -Werror
+BFZ			= 8192
+BUF			= ./bfz
 
 # ----------- INCLUDE --------------
 INCLUDE		= includes
@@ -36,13 +38,14 @@ C_SRCS		= ft_atois.c ft_c.c ft_c2.c ft_mem.c ft_mem2.c ft_print.c ft_str.c ft_st
 				ft_str4.c ft_str5.c ft_split.c ft_strtrim.c ft_sarr.c ft_lst.c ft_lst2.c ft_lst3.c
 P_SRCS		= ft_printf.c ft_printf_utils.c ft_core.c ft_formatters.c ft_ntoston.c ft_parsers.c \
 				ft_sutils.c main.c
-G_SRCS		= get_next_line.c
+G_SRCS		= get_next_line.c get_next_line_utils.c
 C_OBJS		= $(patsubst %.c, $(CORE)/$(OBJ)/%.o,$(C_SRCS))
 P_OBJS		= $(patsubst %.c, $(PRINTF)/$(OBJ)/%.o,$(P_SRCS))
 G_OBJS		= $(patsubst %.c, $(GNL)/$(OBJ)/%.o,$(G_SRCS))
 
 # ----------- RULES ----------------
-all		: ${NAME}
+
+all		: $(NAME)
 $(NAME)	: $(C_OBJS) $(P_OBJS) $(G_OBJS)
 	ar rcs ${NAME} $(C_OBJS) $(P_OBJS) $(G_OBJS)
 	@echo "$(PURPLE)§> $(RED)Building $(DESCRIPTION) $(GREEN)√$(EOC)"
@@ -54,17 +57,17 @@ $(PRINTF)/$(OBJ)/%.o	: $(PRINTF)/$(SRC)/%.c | $(PRINTF)/$(OBJ)
 	$(CC) $(CFLAGS) $(C_INCLUDES) $(P_INCLUDES) -c $< -o $@
 
 $(GNL)/$(OBJ)/%.o		: $(GNL)/$(SRC)/%.c | $(GNL)/$(OBJ)
-	$(CC) $(CFLAGS) $(C_INCLUDES) $(G_INCLUDES) -D BUFFER_SIZE=64 -c $< -o $@
+	$(CC) $(CFLAGS) $(C_INCLUDES) $(G_INCLUDES) -D BUFFER_SIZE=$(BFZ) -c $< -o $@
 
 $(CORE)/$(OBJ)		:	
 	@-mkdir $(CORE)/$(OBJ)
 	@echo "$(PURPLE)§> $(RED)Compiling $(CORE) object files$(EOC)"
 
-$(PRINTF)/$(OBJ)		:	
+$(PRINTF)/$(OBJ)	:	
 	@-mkdir $(PRINTF)/$(OBJ)
 	@echo "$(PURPLE)§> $(RED)Compiling $(PRINTF) object files$(EOC)"
 
-$(GNL)/$(OBJ)		:	
+$(GNL)/$(OBJ)		:
 	@-mkdir $(GNL)/$(OBJ)
 	@echo "$(PURPLE)§> $(RED)Compiling $(GNL) object files$(EOC)"
 
@@ -79,6 +82,9 @@ fclean	:	clean
 	rm -f $(NAME)
 
 re		:	fclean all
+
+norm	:
+	norminette $(CORE) $(PRINTF) $(GNL)
 
 .PHONY	: all clean fclean re bonus
 

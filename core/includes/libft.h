@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:39:27 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/10/24 12:09:59 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/11/12 19:52:06 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 int		ft_strncmp(char const *s1, char const *s2, size_t n);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
-char*	ft_strepchr(char* s, char c, char r);
+char	*ft_strepchr(char *s, char c, char r);
 char	*ft_strrchr(const char *s, int c);
-char*	ft_strrepchr(char* s, char c, char r);
+char	*ft_strrepchr(char	*s, char c, char r);
 char	*ft_strtrim(char const *src, char const *set);
 char	*ft_substr(char const *s, size_t start, size_t len);
 int		ft_tolower(int c);

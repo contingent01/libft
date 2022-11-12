@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 /*
 ** Clear the list and free it
@@ -46,22 +47,11 @@ void	ft_lstdel(t_list **alst, t_list *lst, void (*del)(void *))
 {
 	if (!alst || !*alst || !lst)
 		return ;
-	if (!lst->prev && !lst->next)
-	{
-		ft_lstclear(alst, del);
-		return ;
-	}
 	if (lst->prev)
-	{
 		lst->prev->next = lst->next;
-		if (lst->next)
-			lst->next->prev = lst->prev;
-	}
 	else
-	{
 		*alst = lst->next;
-		if (lst->next)
-			lst->next->prev = *alst;
-	}
+	if (lst->next)
+		lst->next->prev = lst->prev;
 	ft_lstdelone(lst, del);
 }
