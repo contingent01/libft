@@ -6,13 +6,13 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:35:38 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/10/04 16:32:12 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:39:54 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static long	x_sign(long x, int sign)
+long	x_sign(long x, int sign)
 {
 	if (sign < 0)
 		x = 0;

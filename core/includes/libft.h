@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:39:27 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/11/12 19:52:06 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:43:50 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,11 @@ int		ft_isspace(int c);
 
 size_t	ft_strncpy(char *dest, const char *src, size_t n);
 
+long	x_sign(long x, int sign);
 int		ft_atoi(const char *str);
 long	ft_atol(const char *str);
+int		ft_satoi(const char *str, int s);
+
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t num, size_t size);
 
