@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:37:53 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/11/15 18:43:27 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:52:40 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ int	ft_satoi(const char *str, int s)
 		}
 		i++;
 	}
+	if (str[i] != '\0')
+		x = 0;
 	return ((int)(x * sign));
 }
