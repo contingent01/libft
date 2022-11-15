@@ -6,13 +6,13 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 18:37:53 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/11/15 18:52:40 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:33:05 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_satoi(const char *str, int s)
+int	ft_satoi(const char *str, int *n, int s)
 {
 	int		i;
 	long	x;
@@ -28,13 +28,11 @@ int	ft_satoi(const char *str, int s)
 	{
 		x = x * 10 + str[i] - '0';
 		if (x * sign > INT_MAX || x * sign < INT_MIN)
-		{
-			x = x_sign(x, sign);
-			break ;
-		}
+			return (0);
 		i++;
 	}
 	if (str[i] != '\0')
-		x = 0;
-	return ((int)(x * sign));
+		return (0);
+	*n = (int)(x * sign);
+	return (1);
 }
