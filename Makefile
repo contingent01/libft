@@ -6,7 +6,7 @@
 #    By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 18:39:38 by mdkhissi          #+#    #+#              #
-#    Updated: 2022/11/12 23:33:41 by mdkhissi         ###   ########.fr        #
+#    Updated: 2022/11/19 20:06:34 by mdkhissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,7 @@ fclean	:	clean
 re		:	fclean all
 
 norm	:
-	norminette $(CORE) $(PRINTF) $(GNL)
+	norminette $(CORE) $(PRINTF) $(GNL) $(INCLUDE)
 
 .PHONY	: all clean fclean re bonus
 
