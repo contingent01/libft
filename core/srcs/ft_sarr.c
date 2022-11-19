@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:31:53 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/10/09 19:19:35 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/11/19 19:42:09 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,16 @@ void	*ft_free_sars4(char ***sarr1, char ***sarr2,
 	return (NULL);
 }
 
-void	ft_print_sar(char **sarr)
+void	ft_iter_sar(char **sarr, void (*f)(char *))
 {
 	int	i;
 
-	if (!sarr)
+	if (!sarr || !f)
 		return ;
 	i = 0;
 	while (sarr[i])
 	{
-		ft_putendl_fd(sarr[i], STDOUT_FILENO);
+		f(sarr[i]);
 		i++;
 	}
 }
