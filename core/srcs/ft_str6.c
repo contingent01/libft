@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:39:03 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/10/09 19:17:39 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/11/25 21:43:04 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
 // ** return $result
 // */
 
-char	*ft_strtrim(char const *src, char const *set)
+char	*ft_strtrim(const char *src, const char *set)
 {
 	char	*dest;
 	size_t	i;
@@ -61,4 +61,20 @@ char	*ft_strtrim(char const *src, char const *set)
 		return (NULL);
 	ft_strncpy(dest, src + i, dlen);
 	return (dest);
+}
+
+void	ft_strepallch(char *s, char c, char r)
+{
+	char	*i;
+
+	i = ft_strepchr(s, c, r);
+	while (i != NULL)
+	{
+		i = ft_strepchr(s, c, r);
+	}
+}
+
+void	ft_putendl(char *s)
+{
+	ft_putendl_fd(s, STDOUT_FILENO);
 }

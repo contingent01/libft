@@ -28,7 +28,7 @@ int	ft_putstr_fd(char *s, int fd)
 	int	len;
 
 	len = ft_strlen(s);
-	write(fd, s, len);
+	len = write(fd, s, len);
 	return (len);
 }
 
@@ -70,4 +70,9 @@ void	ft_putnbr_fd(int nb, int fd)
 		c *= -1;
 	c += '0';
 	ft_putchar_fd(c, fd);
+}
+
+void	ft_putstr(char *s)
+{
+	ft_putstr_fd(s, STDOUT_FILENO);
 }

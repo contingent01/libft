@@ -6,14 +6,14 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:38:45 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/10/09 19:19:16 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/11/25 21:43:04 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-char	*ft_substr(char const *s, size_t start, size_t len)
+char	*ft_substr(const char *s, size_t start, size_t len)
 {
 	size_t	realen;
 	char	*xtr;
@@ -37,7 +37,7 @@ char	*ft_substr(char const *s, size_t start, size_t len)
 	return (xtr);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	size_t	lens1;
 	size_t	lens2;

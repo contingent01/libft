@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:38:06 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 17:41:48 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/11/25 21:43:04 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 ** return $n.
 */
 
-static int	count_sarrsize(char const *s, char c)
+static int	count_sarrsize(const char *s, char c)
 {
 	int	i;
 	int	n;
@@ -76,7 +76,7 @@ static void	split_worker(const char *s, int *i, int *upto, char c)
 ** If allocation fail, $n = -1
 */
 
-static char	**splitstoarr(char const *s, char c, char **sarr)
+static char	**splitstoarr(const char *s, char c, char **sarr)
 {
 	int	i;
 	int	k;
@@ -112,7 +112,7 @@ static char	**splitstoarr(char const *s, char c, char **sarr)
 ** If not, NULL terminate the array by affecting the last case.
 */
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	int		sarrsize;
 	char	**sarr;

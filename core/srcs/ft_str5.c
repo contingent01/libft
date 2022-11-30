@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 19:18:35 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/11/12 19:51:17 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/11/27 04:14:15 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,33 @@ char	*ft_strrepchr(char *s, char c, char r)
 		return (NULL);
 	*c_to_rep = r;
 	return (c_to_rep);
+}
+
+char	*ft_strstr(const char *s1, const char *s2)
+{
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	size_t	f;
+
+	if (!s1 || !s2)
+		return (NULL);
+	if (!(*s2))
+		return ((char *)&s1[ft_strlen(s1)]);
+	if (!(*s1) && !(*s2))
+		return ((char *)&s1[0]);
+	i = 0;
+	j = 0;
+	while (s1[i])
+	{
+		f = i;
+		k = i;
+		j = 0;
+		while (s1[k] && s2[j] && s1[k] == s2[j])
+			k = k + 1 + 0 * j++;
+		if (s2[j] == '\0')
+			return ((char *)&s1[f]);
+		i++;
+	}
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 #    By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 18:39:38 by mdkhissi          #+#    #+#              #
-#    Updated: 2022/11/19 20:06:34 by mdkhissi         ###   ########.fr        #
+#    Updated: 2022/11/27 02:42:24 by mdkhissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ DESCRIPTION	= Libft
 
 # ----------- COMPILER FLAGS -------
 CC			= clang
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g3 -fsanitize=address
 BFZ			= 8192
 BUF			= ./bfz
 
@@ -34,8 +34,8 @@ GNL			= gnl
 #------------ FILES ---------------
 OBJ			= objs
 SRC			= srcs
-C_SRCS		= ft_atois.c ft_c.c ft_c2.c ft_mem.c ft_mem2.c ft_print.c ft_str.c ft_str2.c ft_str3.c \
-				ft_str4.c ft_str5.c ft_split.c ft_strtrim.c ft_sarr.c ft_lst.c ft_lst2.c ft_lst3.c
+C_SRCS		= ft_atois.c ft_atois2.c ft_c.c ft_c2.c ft_mem.c ft_mem2.c ft_print.c ft_str.c ft_str2.c ft_str3.c \
+				ft_str4.c ft_str5.c ft_split.c ft_str6.c ft_sarr.c ft_sarr2.c ft_sarr3.c ft_sarr4.c ft_lst.c ft_lst2.c ft_lst3.c
 P_SRCS		= ft_printf.c ft_printf_utils.c ft_core.c ft_formatters.c ft_ntoston.c ft_parsers.c \
 				ft_sutils.c main.c
 G_SRCS		= get_next_line.c get_next_line_utils.c

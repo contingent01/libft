@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 17:31:53 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/11/19 19:42:09 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/11/25 23:58:36 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_iter_sar(char **sarr, void (*f)(char *))
 	}
 }
 
-int	ft_sarr_len(char **sarr)
+int	ft_sarlen(char **sarr)
 {
 	int	i;
 
@@ -66,4 +66,13 @@ int	ft_sarr_len(char **sarr)
 	while (sarr[i])
 		i++;
 	return (i);
+}
+
+char	**empty_sar(void)
+{
+	char	**sar;
+
+	sar = malloc(sizeof(char *));
+	sar[0] = NULL;
+	return (sar);
 }

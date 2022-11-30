@@ -32,5 +32,6 @@ void	fddel(void *vgnl);
 t_list	*find_add_fd(t_list **fdlst, int fd, t_gnl **f, char **line);
 int		gnl_append(ssize_t *ret, char **new, char *buf, char **line);
 int		get_next_line(int fd, char **line);
+int		gnl_filled(int fd, char **line);
 
 #endif

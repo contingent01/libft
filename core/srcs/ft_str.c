@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 16:35:18 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/08/07 17:30:34 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/11/25 21:43:04 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlen(const char *s)
 	return (l);
 }
 
-int	ft_strncmp(char const *s1, char const *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
@@ -43,7 +43,7 @@ int	ft_strncmp(char const *s1, char const *s2, size_t n)
 	return (0);
 }
 
-int	ft_strcmp(char const *s1, char const *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t	i;
 

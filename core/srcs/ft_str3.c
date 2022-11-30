@@ -6,7 +6,7 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 16:54:23 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/10/09 19:44:57 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/11/25 21:43:04 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	return (NULL);
 }
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
 	char			*str;

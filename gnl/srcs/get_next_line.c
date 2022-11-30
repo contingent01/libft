@@ -6,11 +6,13 @@
 /*   By: mdkhissi <mdkhissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 22:00:21 by mdkhissi          #+#    #+#             */
-/*   Updated: 2022/11/12 23:21:03 by mdkhissi         ###   ########.fr       */
+/*   Updated: 2022/11/27 00:08:55 by mdkhissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/get_next_line.h"
+
+// 	return (1 * (ret > 0) + ret * (ret <= 0));
 
 int	get_next_line(int fd, char **line)
 {
@@ -39,4 +41,21 @@ int	get_next_line(int fd, char **line)
 	if (ret > 0)
 		ft_strcpy(f->buf, new + 1);
 	return (1 * (ret > 0) + ret * (ret <= 0));
+}
+
+int	gnl_filled(int fd, char **line)
+{
+	ssize_t	ret;
+
+	if (!line)
+		return (-1);
+	ret = 1;
+	while (ret > 0)
+	{
+		ret = get_next_line(fd, line);
+		if (*line && **line != '\0')
+			break ;
+		*line = ft_free(*line);
+	}
+	return (ret);
 }
